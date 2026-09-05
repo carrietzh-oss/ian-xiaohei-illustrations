@@ -24,7 +24,8 @@ ian-xiaohei-illustrations/
 │   ├── huayexini-front-final.png
 │   ├── black-cat-four-fish-badge.png
 │   ├── standard-sheet/          # 10 张标准设定图与徽章源文件
-│   └── examples/                 # 保留的上游参考素材
+│   └── derivatives/             # 已选 4 张正式衍生资产
+├── examples/                    # 保留的上游参考素材
 └── references/
     ├── huayexini-ip.md           # 角色圣经
     ├── style-dna.md               # 画风与配色
@@ -34,6 +35,8 @@ ian-xiaohei-illustrations/
 ```
 
 标准设定图的编号、用途和不可变识别点见 `ian-xiaohei-illustrations/assets/standard-sheet/README.md`。
+
+已选的漫画、拼豆、透明贴纸和封面样稿见 `ian-xiaohei-illustrations/assets/derivatives/README.md`。
 
 ## 使用示例
 
