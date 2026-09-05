@@ -1,75 +1,35 @@
-# Padrões de composição e originalidade
+# 花野稀泥构图模式
 
-## Tipos de estrutura (escolha um)
+## 1. 普通素材 → 意外结果
 
-### Workflow (fluxo)
+左侧是真实素材或问题，中间是冷脸萌角色进行实验，右侧是出人意料的视觉结果。适合 AI 工具和创意实验内容。
 
-Entrada → processamento → saída, produção de conteúdo, workflow de IA, automação.  
-Esquerda entrada, meio Xiaohei/máquina, direita saída; setas laranja no fluxo principal.
+## 2. 冷脸反差
 
-### Recorte de sistema
+角色保持平静冷脸，动作或场景非常离谱。不要靠大笑解释笑点，让观众从反差中理解。
 
-Fontes, filtros, banco, render, pedaço de agents.  
-Só **3–5** módulos; Xiaohei numa ação-chave.
+## 3. Before → After
 
-### Antes e depois
+左侧保留原始、混乱或普通状态，右侧展示完成后的视觉效果，中间用一个清晰动作连接，不要堆太多箭头。
 
-Caos/ordem, manual/automático, disperso/reunido.  
-Esquerda caos, direita estável, seta laranja no meio.
+## 4. 实验工作台
 
-### Estados do personagem
+角色在桌面、纸张、相机、电脑或灵感方块之间进行一个明确动作。道具控制在 1–4 件。
 
-Dor do usuário, ansiedade de ferramenta, travado → rodando.  
-**2–4** mini-estados, rótulo curto cada.
+## 5. 小红书封面
 
-### Metáfora conceitual
+角色放在画面一侧或中心，另一侧保留标题区；使用真实素材切片、纸质碎片、胶带、手写线条和徽章局部放大。
 
-Fábrica, armazém, caixa-preta, máquina de workflow.  
-Um objeto/máquina grande, poucas entradas, uma saída.
+## 6. 四格漫画
 
-### Camadas de método
+建议使用“想法出现 → 立刻尝试 → 中途失控 → 意外成功”的节奏。每格只保留一个动作，文字后置排版。
 
-Framework, stack, camadas de sistema.  
-Caixas em camadas (**não** pirâmide formal); Xiaohei montando ou carregando.
+## 7. 拼豆/徽章
 
-### Mapa / rota
+改为正面、居中、有限色块、高对比边缘。不要让细碎笔触决定识别度，优先保证轮廓和主色。
 
-Ideia → lançamento, jornada, handoff, aprendizado.  
-Caminho sinuoso, poucos nós; Xiaohei puxa o fio ou anda.
+## 原创要求
 
-### Mini-quadrinhos
-
-Fracasso → sucesso, processo real.  
-**2–4** quadros; um movimento cada.
-
-## Metáfora original (3 passos)
-
-1. Conceito abstrato → **ação física** (travar, vazar, pesar, triar, fermentar, abrir, dobrar…).
-2. Sistema → **objeto low-tech** (máquina quebrada, caixa, gaveta, cano, poço, escada, balança…).
-3. Xiaohei **executa** a ação (preso na máquina, puxa fio, guarda porta, carrega, conserta…).
-
-### Pool de objetos (1–2 por imagem)
-
-Caixa de papelão, gaveta, máquina velha, funil, balança, caixa de correio, porta, poço, escada, cano, novelo, comporta, disco, caixa-preta, furador, máquina de massas, varal, estação estranha.
-
-### Pool de ações
-
-Puxar, carregar, enfiar, pescar, pressionar, pesar, costurar, cortar, apertar, guardar, empurrar, receber, desmontar, marcar, reciclar.
-
-## Anti-cópia
-
-Não abra nem recrie `assets/examples/` por padrão — só calibração de densidade de linha, vazio, cor e temperamento.
-
-Sem pedido explícito de “copie esta composição”, **não** reutilize:
-
-- esteira com dois breakpoints  
-- alavanca de julgamento na máquina de conteúdo  
-- funil tráfego / confiança / conversão  
-- peixe multi-uso  
-- caminho de handoff clássico  
-- três camadas de fontes  
-- três Xiaohei (megafone / ponte / porta)  
-- toolbox de carimbo  
-- placa nas armadilhas comuns  
-
-Temas parecidos → **outra** metáfora. Handoff pode ser cauda do conteúdo na maçaneta; multi-uso pode ser papel prensado em formatos, não peixe.
+- 同一个主题不要重复使用同一组道具和动作。
+- 不要复制仓库示例的具体构图，只借鉴留白、线条密度和荒诞感。
+- 每张图先回答：观众一秒钟能看懂什么？

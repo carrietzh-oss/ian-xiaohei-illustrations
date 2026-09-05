@@ -1,35 +1,12 @@
-# Aviso
+# 说明
 
-## Este repositório
+本目录是基于 `ggampp/ian-xiaohei-illustrations` 的公开结构和 MIT 授权，制作的“花野稀泥”个人 IP 适配版。
 
-Fork / adaptação **português BR + Grok Build** publicado em:
+原始项目与 Xiaohei（小黑）视觉概念归 Ian 所有：
 
-- <https://github.com/ggampp/ian-xiaohei-illustrations>
+- https://github.com/helloianneo/ian-xiaohei-illustrations
+- https://github.com/ggampp/ian-xiaohei-illustrations
 
-Mantenedor da adaptação: **Guilherme Pimentel** (<https://github.com/ggampp>).
+本适配版新增的花野稀泥角色设定、徽章、配色、Prompt、示例和生成资产，按本目录中的 IP 角色圣经执行。
 
-Inclui hub de roteamento para:
-
-- <https://github.com/ggampp/ian-xiaohei-scenes>
-- <https://github.com/ggampp/ian-handdrawn-ppt>
-
-## Upstream e créditos
-
-Skill e IP visual **小黑 (Xiaohei)** criados por **Ian**:
-
-- Illustrations: <https://github.com/helloianneo/ian-xiaohei-illustrations>
-- Scenes: <https://github.com/helloianneo/ian-xiaohei-scenes>
-- Handdrawn PPT: <https://github.com/helloianneo/ian-handdrawn-ppt>
-- Site: <https://www.ianneo.xyz>
-- X: <https://x.com/ianneo_ai>
-
-## Imagens
-
-| Pasta | Origem |
-|-------|--------|
-| `assets/sap-rap-vs-tachyonix-illustrations/` | Exemplos gerados neste fork (Grok) |
-| `assets/grok-skill-test/` | Smoke test dos 3 modos (Grok) |
-| `examples/images/` e `ian-xiaohei-illustrations/assets/examples/` | Calibração de estilo do **upstream** (Ian) — não templates de composição |
-| `assets/ian-wechat-qr.jpg` | Contato do autor original (Ian) |
-
-Ao redistribuir, preserve a atribuição a Ian pelo conceito/IP e a MIT License.
+重新发布时请保留原项目的 MIT License 与上述来源说明，并确认图片资产的使用权。

@@ -1,96 +1,52 @@
-# Template de prompt — Grok `image_gen` / `image_edit`
+# 花野稀泥 Prompt 模板
 
-## Regras de montagem (Grok Imagine)
+## 基础角色块
 
-- **Uma cena por chamada** de `image_gen`.
-- Sempre passe **`aspect_ratio: "16:9"`** em novas gerações.
-- Escreva o prompt em **prosa natural** (português e/ou inglês). O DNA visual em inglês abaixo costuma estabilizar o estilo; tema e composição podem ir em PT-BR.
-- Front-load: sujeito (Xiaohei + ação) → metáfora → estilo → composição → rótulos.
-- Prefira dizer o que **deve existir** (descrições positivas). Mantenha a lista de exclusões do DNA porque o estilo desta skill depende de “não ser PPT”.
-- Rótulos: **curtos**. Modelo de imagem erra com texto longo — menos é mais.
-- Várias imagens do artigo: várias chamadas; prompts distintos.
-
-## Template principal (`image_gen`)
-
-Substitua as chaves `{…}`. Envie o bloco inteiro (ou uma prosa condensada equivalente) no campo `prompt`.
+每次生成都保留以下内容：
 
 ```text
-Ilustração horizontal 16:9 para corpo de artigo, rascunho de produto absurdo e limpo.
-
-Visual DNA:
-Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red, orange, and blue handwritten short annotations. Clean absurd product-sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI, no top-left title banner.
-
-Personagem recorrente (obrigatório):
-小黑 / Xiaohei — small solid-black absurd creature with white dot eyes, tiny thin legs, blank serious deadpan expression, slightly uneven hand-drawn body. Xiaohei performs the core conceptual action; he is not a corner decoration. Serious, slightly bizarre, not cute.
-
-Tema: {tema da ilustração}
-
-Tipo de estrutura (não escrever o nome na imagem): {Workflow | recorte de sistema | antes e depois | estados | metáfora conceitual | camadas | mapa-rota | mini-quadrinhos}
-
-Ideia central: {uma frase com o que o leitor deve entender}
-
-Composição: {onde está o Xiaohei, o que faz, objeto low-tech principal, como o fluxo se lê da esquerda para a direita ou no centro}
-
-Elementos: {1–4 objetos no máximo}
-
-Rótulos manuscritos curtos ({idioma: pt-BR ou chinês}), no máximo 5:
-{rótulo1} / {rótulo2} / {rótulo3} / {rótulo4} / {rótulo5 opcional}
-
-Cores: preto no traço e no Xiaohei; laranja só no fluxo/setas; vermelho só em alerta/problema/resultado; azul só em nota secundária.
-
-Restrições: um único núcleo estrutural; sujeito ~40–60% do quadro; ≥35% vazio; sem título no canto; sem copiar composições de exemplos antigos; inventar metáfora fresca para este artigo; claro mas não didático; estranho mas limpo.
+花野稀泥官方 IP：冷脸萌的 Q 版创意实验者。短直黑色 Bob 发，半透明紫粉色塑料脑洞袋，左右两个对称扎结，紫色椭圆墨镜，粉色泡泡糖，灰紫色剪裁感创作者套装，深葡萄紫腰封，宽腿短裤和深色鞋。角色胸口画面右侧佩戴黑猫四鱼蓝色星形徽章：黑色小猫头像、亮蓝色异形星形底、恰好四条橙色小鱼。表情保持半垂眼、微抿嘴、淡淡腮红的冷脸萌气质。
 ```
 
-### Versão curta (quando o contexto já carrega o DNA)
+## 基础模板
 
 ```text
-16:9 pure white hand-drawn absurd product sketch. Black wobbly line art, lots of empty space, sparse short handwritten labels in {pt-BR|Chinese} with red/orange/blue only. Xiaohei (solid black blob, white dot eyes, thin legs, deadpan) must do the core action: {ação}. Scene: {composição em 1–2 frases}. Labels: {lista curta}. No PPT, no cute mascot, no top-left title, no busy diagram.
+使用花野稀泥官方 IP 角色。
+
+角色固定设定：
+{基础角色块}
+
+本次主题：{主题}
+本次动作：{动作}
+本次场景：{场景}
+本次道具：{道具}
+本次情绪：{冷静/好奇/轻微惊讶/克制开心/疲惫无语/轻微得意}
+画面用途：{小红书封面/漫画/拼豆/贴纸/头像/视频贴图}
+画幅：{1:1/4:5/9:16/16:9}
+
+视觉风格：手绘彩铅、蜡笔和马克笔混合质感，深葡萄紫线稿，紫灰主色，干净留白，拼贴与实验杂志感，主体轮廓清晰。
+
+只改变本次主题、动作、场景、道具和情绪；保持角色外貌、脑洞袋、服装、徽章、主色和冷脸萌基底不变。
 ```
 
-## Parâmetros da ferramenta
+## 负面 Prompt
 
 ```text
-image_gen:
-  prompt: <template preenchido>
-  aspect_ratio: "16:9"
+不要改变角色脸型、发型、脑洞袋、扎结数量、墨镜、泡泡糖、服装、腰封和胸口徽章；不要三个点、不要枪形徽章、不要额外鱼、不要额外动物、不要随机换色、不要写实人像、不要普通美少女、不要过度甜美、不要夸张大笑、不要复杂背景、不要长文字、不要 Logo、不要水印、不要多余角色。
 ```
 
-## Edição (`image_edit`)
-
-### Remover título no canto
+## 精确局部编辑模板
 
 ```text
-Edit only: remove the handwritten title "{texto}" and its underline from the top-left. Fill with clean pure white matching the paper. Keep everything else identical — characters, labels, paths, line style, composition, quality. Do not add any new text or objects.
+只编辑{明确区域}，把它改为{明确变化}。
+保持角色的脸、发型、脑洞袋、服装、徽章、姿势、构图、背景、配色和手绘质感完全不变。
+不要新增其他物件，不要改变画面比例，不要生成文字或水印。
 ```
 
-```text
-image_edit:
-  prompt: <acima>
-  image: ["<caminho absoluto da imagem ou token [Image #N]>"]
-```
+## 稳定性原则
 
-### Reforçar protagonismo do Xiaohei
-
-```text
-Regenerate with the same core meaning and sparse layout, but make Xiaohei (solid black creature, white dot eyes, thin legs, deadpan) central to the conceptual action — he must perform the strange work that explains the idea, not stand beside a diagram. Keep pure white background, black hand-drawn lines, minimal short labels, not cute.
-```
-
-### Calibrar estilo com exemplo (só se pedido)
-
-```text
-New illustration for theme "{tema}", invent a fresh metaphor (do not copy the reference composition or objects). Match only the style of the reference: pure white paper, sparse black wobbly line density, limited red/orange/blue handwritten labels, deadpan Xiaohei participation. 16:9 article body illustration.
-```
-
-Use a referência em `image` (ex.: um PNG em `assets/examples/`).
-
-### Reduzir densidade / “cheiro de PPT”
-
-```text
-Simplify: keep the same core idea and Xiaohei as action subject. Remove extra nodes, boxes, and arrows. No title, no grid, no formal flowchart look. More empty white space, fewer short labels, hand-drawn product sketch only.
-```
-
-## Idioma
-
-- Artigo em **português** → rótulos em **português** curto.
-- Artigo em **chinês** → rótulos em **chinês** curto.
-- O bloco “Visual DNA” em inglês pode permanecer: estabiliza o render no Imagine.
+1. 一次只改变一到两个变量。
+2. 多张图始终使用同一段基础角色块。
+3. 先生成无文字画面，再在排版软件里添加标题。
+4. 需要保持徽章一致时，使用 `assets/black-cat-four-fish-badge.png` 作为参考图。
+5. 需要保持角色一致时，使用 `assets/huayexini-front-final.png` 作为参考图。

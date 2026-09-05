@@ -1,8 +1,7 @@
-﻿# Metadados legados (Codex). No Grok Build use SKILL.md + image_gen/image_edit.
-# Hub: illustrations (1.0) + scenes (2.0) + handdrawn-ppt.
+# 花野稀泥 IP Skill 的入口元数据。
 interface:
-  display_name: "Ian Visual Hub (Xiaohei + PPT)"
-  short_description: "Roteia e gera Illustrations 1.0, Scenes 2.0 e Handdrawn PPT via image_gen/image_edit"
-  default_prompt: "Use a skill ian-xiaohei-illustrations (hub Ian): roteie illustrations | scenes | handdrawn-ppt e gere no Grok com aspect_ratio adequado (16:9 corpo, 20:9 capa/long-scroll)."
+  display_name: "花野稀泥 IP Illustrations"
+  short_description: "生成保持冷脸萌角色一致性的漫画、拼豆、徽章和创意实验图像"
+  default_prompt: "使用 huayexini-illustrations Skill，读取角色圣经、画风、Prompt 模版和 QA 清单，生成保持花野稀泥冷脸萌 IP 一致性的图像。"
 policy:
   allow_implicit_invocation: true

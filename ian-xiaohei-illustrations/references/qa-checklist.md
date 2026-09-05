@@ -1,48 +1,37 @@
-# Checklist de QA (Grok)
+# 花野稀泥 IP 图像 QA 清单
 
-## Obrigatório (pass)
+## 角色一致性
 
-- **16:9** horizontal.
-- Fundo **branco limpo**.
-- Tem **Xiaohei**.
-- Xiaohei na **ação central** (não só decoração).
-- Metáfora **nova** para o artigo (não clone de exemplo).
-- Absurdo, criativo, interessante.
-- Limpo: sujeito ≤ ~**60%** do quadro.
-- **Um** núcleo estrutural por imagem.
-- Rótulos **poucos, curtos, legíveis** (PT-BR ou chinês).
-- Laranja só em fluxo/setas; vermelho em alerta; azul em secundário.
+- [ ] 一眼仍然是花野稀泥创意实验者
+- [ ] 紫色双结脑洞袋存在，两个扎结没有随机消失
+- [ ] 短黑发、灰紫套装、深葡萄紫腰封保持一致
+- [ ] 表情仍然是冷脸萌，而非普通甜美卡通
+- [ ] 画面右侧胸口徽章是黑猫＋蓝色星形＋四条橙色小鱼
+- [ ] 没有出现三个点、枪形徽章或其他动物
 
-## Sinais de falha → ação no Grok
+## 画风一致性
 
-| Sinal | Ferramenta sugerida |
-|-------|---------------------|
-| Título no canto | `image_edit` — remover só o título |
-| Xiaohei fofo / canto | `image_edit` ou nova `image_gen` |
-| Cara de PPT / curso | regenerar com template “simplificar” |
-| Elementos/setas demais | regenerar com menos nós |
-| Texto longo ou ilegível | regenerar com ≤3–5 rótulos curtos |
-| Fundo sujo / textura | regenerar reforçando pure white |
-| Parecido com `assets/examples/` | regenerar trocando objeto + ação |
-| Precisa inspecionar texto/estilo | `read_file` na imagem gerada |
+- [ ] 有手绘彩铅/蜡笔/马克笔质感
+- [ ] 线稿为深葡萄紫或深海军蓝，不是机械纯黑矢量线
+- [ ] 紫灰是主色，蓝橙集中在徽章或少量实验重点
+- [ ] 主体轮廓清晰，缩小后仍能识别
+- [ ] 背景没有无关复杂元素
 
-## Como iterar
+## 用途检查
 
-- **Comum demais:** Xiaohei sujeito + metáfora estranha coerente.  
-- **Complexo:** um movimento, 3–5 rótulos.  
-- **Fofo:** deadpan, not cute, not mascot.  
-- **PPT:** sem título, grade, setas em excesso.  
-- **Clone de exemplo:** mesma ideia, outro objeto e outra ação.  
-- **Texto errado:** edição local; se piorar, regenerar com menos texto.
+- [ ] 画幅符合用途：封面 4:5、视频 9:16、头像/贴纸 1:1
+- [ ] 小红书封面保留标题区，不让角色占满全部画面
+- [ ] 漫画每格只有一个主要动作
+- [ ] 拼豆版本没有渐变和过细纹理
+- [ ] 透明素材没有白底、阴影或光晕
+- [ ] 未提供准确文案时没有生成长文字
 
-## Entrega
+## 失败后的处理
 
-Bom: o leitor pensa “que estranho…” e em ~1s entende a estrutura.
-
-Ruim: parece página de tutorial em vez de rascunho absurdo de produto no papel branco.
-
-## Entrega no workspace
-
-- Listar caminhos retornados pelo Grok (`images/…` ou path absoluto).  
-- Se o projeto pedir: copiar para `assets/<slug>-illustrations/01-….png`.  
-- Não sobrescrever assets sem confirmação.
+| 问题 | 处理 |
+| --- | --- |
+| 角色变成普通猫咪/女孩 | 重新加入基础角色块，并使用正面参考图 |
+| 徽章变形或鱼数量不对 | 单独编辑胸口徽章，使用徽章参考图 |
+| 画面太甜 | 加入 relaxed eyelids、tiny neutral mouth、deadpan，并减少装饰 |
+| 画面太乱 | 删除多余道具，只保留一个视觉动作 |
+| 文字错误 | 删除图中文字，后期排版添加 |

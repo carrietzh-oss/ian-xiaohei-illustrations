@@ -1,47 +1,60 @@
-# DNA de estilo
+# 花野稀泥画风 DNA
 
-## Em uma frase
+## 一句话
 
-Branco puro, minimalista, traço à mão, muito vazio, contido, absurdo, sensação de rascunho de produto, anotações manuscritas curtas, estrutura clara sem virar manual.
+冷脸萌角色 × 手绘彩铅/蜡笔质感 × 紫灰高级底色 × 蓝橙徽章记忆点 × 拼贴和杂志实验感。
 
-Como se alguém que vive de IA, produto, design e ferramentas de dev tivesse rabiscado em papel branco uma explicação rápida.
+## 必须保持
 
-## Obrigatório
+- 手绘彩铅、蜡笔和马克笔混合笔触
+- 深葡萄紫或深海军蓝线稿
+- 轮廓简洁、色块清晰、缩小后仍可识别
+- 紫灰主色，蓝橙集中在黑猫四鱼徽章和少量实验点缀
+- 留白干净，适合人物抠图和拼贴排版
+- 角色表情克制，笑点来自冷脸与离谱场景的反差
 
-- Ilustração de corpo de texto **16:9 horizontal** (`aspect_ratio: "16:9"` no `image_gen`).
-- **Fundo branco puro**: sem bege, cinza quente, textura de papel, gradiente, sombra, ruído ou “papel vintage”.
-- Traço principal **preto à mão**: linha fina, leve tremer, não mecânico, não vetor limpo, não contorno grosso.
-- **Muito espaço em branco**: sujeito cerca de **40%–60%** do quadro; pelo menos **35%** vazio.
-- Poucas anotações manuscritas: no máximo **5–8** (ideal ≤5), cada uma **curta** (PT-BR ou chinês conforme o artigo).
-- Uma imagem conta **apenas um** movimento, estrutura, estado ou metáfora central.
-- A estrutura aparece de forma natural — **não** escreva o nome do tipo de estrutura na imagem.
+## 固定色值
 
-## Cores
+| 角色用途 | 色值 |
+| --- | --- |
+| 脑洞袋、墨镜边框 | `#C96BD8` |
+| 高光、透明袋反光 | `#E7C8F0` |
+| 皮肤、奶油白区域 | `#F7EDE2` |
+| 腮红、泡泡糖 | `#F2B2BB` |
+| 套装 | `#B8B4C2` |
+| 线稿、腰封、鞋 | `#43233F` |
+| 灵感火花 | `#A7E3C1` |
 
-- **Preto**: traço, personagem, caixas, estrutura, texto principal, objetos centrais.
-- **Vermelho**: destaque, problema, ponto emocional, alerta, resultado.
-- **Laranja**: fluxo principal, caminho, setas, automação, movimento A→B.
-- **Azul**: nota secundária, estado mental, estado do sistema, segunda camada, pista de IA/assistente.
+徽章辅助色：明亮钴蓝、橙金、奶油白和深海军蓝。
 
-Azul **não** é obrigatório. Cores com parcimônia.
+## 根据用途调整
 
-## Absolutamente não
+### 角色设定图
 
-- Ilustração comercial / flat premium polido.
-- Infográfico de PPT, fluxograma formal, slide de curso.
-- Mascote fofo ou ilustração infantil.
-- Diagrama de arquitetura complexo.
-- UI “tech” ou screenshot de app.
-- Fundo complexo, gradiente, sombra, textura.
-- Explicar cada nó até o osso.
-- Título no canto: “Workflow”, “Fluxograma”, “Arquitetura”, “Armadilhas”, “Roadmap”, etc.
+干净背景、居中、轮廓完整、细节稳定，不添加复杂叙事元素。
 
-## Direção estética
+### 小红书封面
 
-Queremos: absurdo, criativo, interessante, limpo, inventivo.
+使用真实素材切片、人物抠图、纸张碎片和留白标题区。角色是视觉锚点，画面像实验杂志，不像普通卡通海报。
 
-Não queremos: fofo, infantil, lotado, rígido.
+### 漫画
 
-## Nota Grok / Imagine
+用冷脸和动作制造反差；每格只讲一个动作或一个笑点；不要连续堆叠复杂文字。
 
-Modelos de imagem **erram texto** com facilidade. Esta skill depende de **poucos rótulos curtos** e metáfora visual — se o conteúdo exigir números, tabelas ou labels exatos, avise o usuário ou reduza o texto na imagem em vez de lotar o prompt.
+### 拼豆
+
+使用有限色块、硬边轮廓和高对比配色。去掉渐变、毛发细纹和无法制作的小细节。
+
+### 徽章/贴纸
+
+外轮廓清晰，色块平整，可以有轻微珐琅高光，但不能变成写实 3D 产品图。
+
+## 禁止方向
+
+- 普通二次元美少女模板
+- 过度甜美、闪亮大眼、夸张大笑
+- 写实人像、厚重 3D、普通商业吉祥物
+- 随机改变脑洞袋颜色或扎结数量
+- 纯黑粗线覆盖全部细节
+- 复杂背景抢走角色和徽章的识别度
+- 未提供文案时擅自生成大段文字

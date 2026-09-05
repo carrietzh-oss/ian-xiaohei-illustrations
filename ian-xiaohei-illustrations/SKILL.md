@@ -1,196 +1,69 @@
-﻿---
-name: ian-xiaohei-illustrations
+---
+name: huayexini-illustrations
 description: >
-  Hub visual Ian no Grok Build: ilustrações Xiaohei 1.0 (whiteboard absurdo), cenas
-  Xiaohei 2.0 (objeto real + ação física, incl. long-scroll) e páginas handdrawn-PPT
-  (Capa 20:9 (Grok) + slides 16:9 em PNG). Use para artigos, posts, Notion, metodologia,
-  comparação de produto, dor de trabalho, retrospectiva, curso, “faça um PPT”, shot list,
-  capa, deck, “Xiaohei 2.0”, “cena com objeto real”. Roteia entre modos; ferramentas
-  image_gen e image_edit. Repos: ian-xiaohei-illustrations, ian-xiaohei-scenes,
-  ian-handdrawn-ppt (helloianneo).
+  为“花野稀泥”生成保持角色一致性的冷脸萌 IP 图像，包括小红书封面、漫画、拼豆、贴纸、表情、场景和创意实验插画。使用固定角色圣经、画风、徽章、配色和 QA 规则，避免每次出图发生角色漂移。
 metadata:
-  short-description: "Hub Ian: Xiaohei 1.0 + Scenes 2.0 + Handdrawn PPT (Grok)"
+  short-description: "花野稀泥冷脸萌 IP 图像生成 Skill"
 ---
 
-# Ian Visual Hub — Illustrations · Scenes · Handdrawn PPT (Grok)
+# 花野稀泥 IP Visual Skill
 
-## Posicionamento
+## 定位
 
-Esta skill é o **hub em português BR** para a família visual do Ian no **Grok Build**. Por padrão este repositório entrega o modo **Illustrations (Xiaohei 1.0)**, mas **deve contemplar e rotear** os projetos irmãos:
+这是一套为“花野稀泥”设计的个人 IP 图像生成规则。角色是 AI × 视觉创意实验中的固定主角，不是普通猫咪吉祥物，也不是单一 AI 工具的 Logo。
 
-| Modo | Projeto | Repo |
-|------|---------|------|
-| `illustrations` | Ian Xiaohei Illustrations (1.0) | https://github.com/helloianneo/ian-xiaohei-illustrations |
-| `scenes` | Ian Xiaohei Scenes (2.0) | https://github.com/helloianneo/ian-xiaohei-scenes |
-| `handdrawn-ppt` | Ian Handdrawn PPT | https://github.com/helloianneo/ian-handdrawn-ppt |
+## 必须先读取的文件
 
-> URL com typos tipo `ian-xiaohei-scenesssssssssss` → tratar como **ian-xiaohei-scenes**.
+- `references/huayexini-ip.md`：角色外貌、性格、徽章和禁用项
+- `references/style-dna.md`：线稿、材质、配色和画面气质
+- `references/prompt-template.md`：基础 Prompt、变体和负面 Prompt
+- `references/qa-checklist.md`：生成后检查标准
 
-### Em uma frase por modo
+需要构图时，再读取 `references/composition-patterns.md`；不要默认加载所有示例图片。
 
-- **Illustrations 1.0:** julgamento/fluxo/estrutura → rascunho de quadro absurdo, traço preto, fundo branco puro, rótulos vermelho/laranja/azul. Xiaohei na ação conceitual.  
-- **Scenes 2.0:** situação humana → mini-set com **objeto real** + Xiaohei na ação física; opcional **long-scroll** de trajetória.  
-- **Handdrawn PPT:** material → **páginas PNG** estilo explicação técnica à mão (Capa 20:9 (Grok), corpo 16:9). Xiaohei em geral **não** entra.
+## 请求路由
 
-## Passo 0 — Roteamento (obrigatório)
+| 用户需求 | 输出方向 |
+| --- | --- |
+| 一张角色图、头像、全身立绘 | `character` |
+| 小红书封面、视频贴图、海报 | `social-cover` |
+| 有连续情节的 2–4 格画面 | `comic` |
+| 拼豆、像素、十字绣参考 | `bead-art` |
+| 贴纸、徽章、表情包 | `sticker-badge` |
+| 真实素材与角色的视觉实验 | `creative-experiment` |
+| 有明确环境和动作的故事画面 | `scene` |
 
-Antes de gerar, leia `references/ecosystem-routing.md` e declare o modo de cada entrega:
+只说“生成一张花野稀泥风格的图”时，默认使用 `creative-experiment`；如果明确用于社交媒体，优先使用 `social-cover`。
 
-```text
-Modo: illustrations | scenes | handdrawn-ppt | híbrido
-Submodo (se scenes): padrão 16:9 | long-scroll
-Submodo (se ppt): Capa 20:9 (Grok) | corpo 16:9 | deck N páginas
-```
+## 标准流程
 
-| Pedido do usuário | Modo |
-|-------------------|------|
-| Fluxo, método, Clean Core, comparação de produto, whiteboard | `illustrations` |
-| Dor, reunião, overload, “é sobre mim”, objeto real, Xiaohei 2.0 | `scenes` |
-| Trajetória, retrospectiva, evolução do produto em friso | `scenes` + long-scroll |
-| PPT, slides, curso, capa de artigo, deck | `handdrawn-ppt` |
-| Artigo completo com capa + método + dor | **híbrido** (pastas separadas) |
+1. 提取主题、动作、场景、道具、情绪和画幅。
+2. 锁定花野稀泥角色块，不改角色核心设定。
+3. 选择一个输出方向和一个构图模式。
+4. 填充 `references/prompt-template.md`，一次只增加一到两个变量。
+5. 生成一张图；多个独立需求分别生成。
+6. 使用 `references/qa-checklist.md` 检查角色一致性和画面用途。
+7. 如果不合格，只针对一个问题进行局部编辑，不要整体重写角色。
 
-Se ambíguo e a escolha mudar o resultado: **uma** pergunta curta. Senão, default = `illustrations`.
+## 画幅建议
 
-**Não misture DNAs no mesmo canvas** (traço 1.0 + props foto 2.0, ou slide com título de PPT dentro de illustrations).
+| 用途 | 建议比例 |
+| --- | --- |
+| 头像、徽章、贴纸 | `1:1` |
+| 小红书图文封面 | `4:5` |
+| 竖屏视频贴图 | `9:16` |
+| 漫画横幅、文章插图 | `16:9` |
 
-## Runtime: Grok Build
+## 生成约束
 
-| Situação | Ferramenta |
-|----------|------------|
-| Nova imagem | `image_gen` + `aspect_ratio` adequado |
-| Editar | `image_edit` |
-| QA visual | `read_file` na imagem |
-| Consistência de personagem/deck | mesma descrição de IP/style lock; opcional ref em `image_edit` |
+- 角色身份始终是创意实验者。
+- 必须保留紫色双结脑洞袋、短黑发、灰紫套装和冷脸萌基底。
+- 徽章必须是黑猫＋蓝色异形星形＋四条橙色小鱼；不要替换成三个点、枪或其他动物。
+- 可以改变动作、场景、道具和局部情绪，但不能改变核心轮廓。
+- 画风要有手绘彩铅/蜡笔/马克笔质感，同时保持主体轮廓清晰。
+- 未提供准确文案时，不自动添加长文字，只保留排版空间。
 
-### Aspect ratios
+## 输出说明
 
-| Modo | Ratio |
-|------|-------|
-| illustrations (corpo) | `16:9` |
-| scenes (padrão) | `16:9` |
-| scenes long-scroll | `20:9` (Grok; `21:9` inválido na API) |
-| handdrawn-ppt capa | `20:9` (Grok; `21:9` inválido na API) |
-| handdrawn-ppt corpo | `16:9` |
-
-Orientação geral de prompt Imagine: skill `imagine` do Grok; **DNA do modo escolhido** tem prioridade.
-
-## Mapa de referências
-
-Leia **só o necessário** do modo ativo:
-
-### Sempre (hub)
-
-- `references/ecosystem-routing.md` — decisão de modo e híbridos.
-
-### Modo `illustrations` (completo neste repo)
-
-- `references/style-dna.md`
-- `references/xiaohei-ip.md`
-- `references/composition-patterns.md`
-- `references/prompt-template.md`
-- `references/qa-checklist.md`
-- `assets/examples/` — calibração esporádica; não copiar composição.
-
-### Modo `scenes` (condensado neste repo)
-
-- `references/mode-scenes.md`
-- Se a skill irmã existir em `~/.grok/skills/ian-xiaohei-scenes/`, **prefira o SKILL.md e references oficiais**.
-
-### Modo `handdrawn-ppt` (condensado neste repo)
-
-- `references/mode-handdrawn-ppt.md`
-- Se existir `~/.grok/skills/ian-handdrawn-ppt/`, **prefira o pacote oficial**.
-
-## Fluxos por modo
-
-### A) Illustrations (1.0) — detalhe completo
-
-1. Digestão → âncoras cognitivas.  
-2. Shot list (se só planejar).  
-3. `image_gen` 16:9 por âncora (template em `prompt-template.md`).  
-4. QA `qa-checklist.md`; `image_edit` se preciso.  
-5. Salvar em `assets/<slug>-illustrations/`.
-
-Regras-chave: fundo branco puro; traço preto; Xiaohei na ação; ≤5–8 rótulos curtos; sem PPT; metáfora nova (não copiar `assets/examples/`).
-
-### B) Scenes (2.0) — ver `mode-scenes.md`
-
-1. Extrair **situação** + ação física + objeto real.  
-2. Shot list com ressonância (não só estrutura).  
-3. `image_gen` 16:9 (ou 20:9 long-scroll).  
-4. QA: mini-set real, Xiaohei na ação, sem inventário de props.  
-5. `assets/<slug>-scenes/` ou `…-long-scroll/`.
-
-### C) Handdrawn PPT — ver `mode-handdrawn-ppt.md`
-
-1. Intake + blueprint (título, ponto, arquétipo, texto exato).  
-2. Style lock do deck em todos os prompts.  
-3. Capa `20:9` + páginas `16:9`, uma `image_gen` cada.  
-4. QA de consistência de deck e texto curto.  
-5. `assets/<slug>-handdrawn-ppt/`.  
-6. **Não** entregar PPTX salvo pedido explícito fora desta skill.
-
-### D) Híbrido
-
-Declarar tabela frame → modo. Gerar por modo. Pastas separadas. Entregar mapa:
-
-```text
-capa → handdrawn-ppt
-01–04 → illustrations
-05–06 → scenes
-```
-
-## Idioma
-
-| Origem do texto | Rótulos / títulos na imagem |
-|-----------------|----------------------------|
-| PT-BR | Português curto |
-| Chinês | Chinês curto |
-| Misto | Idioma dominante do trecho |
-
-Modelos de imagem falham com texto longo: **menos rótulos, mais estável**.
-
-## Instalação no Grok
-
-```powershell
-# Hub (este repo)
-$dest = Join-Path $env:USERPROFILE ".grok\skills\ian-xiaohei-illustrations"
-Copy-Item -Recurse -Force ".\ian-xiaohei-illustrations" $dest
-```
-
-Opcional — skills irmãs completas:
-
-```powershell
-# Após clonar os repos oficiais
-Copy-Item -Recurse -Force ".\ian-xiaohei-scenes\ian-xiaohei-scenes" (Join-Path $env:USERPROFILE ".grok\skills\ian-xiaohei-scenes")
-Copy-Item -Recurse -Force ".\ian-handdrawn-ppt\ian-handdrawn-ppt" (Join-Path $env:USERPROFILE ".grok\skills\ian-handdrawn-ppt")
-```
-
-Com as três instaladas, o hub **roteia**; a execução profunda usa o pacote irmão se presente.
-
-## Uso típico
-
-```text
-Use a skill ian-xiaohei-illustrations (hub Ian).
-Para o texto abaixo: roteie o modo certo e gere as imagens no Grok.
-Se for método → illustrations; se for dor/situação → scenes; se for deck → handdrawn-ppt.
-```
-
-```text
-Modo scenes: 3 cenas Xiaohei 2.0 com objeto real sobre pressão de release.
-```
-
-```text
-Modo handdrawn-ppt: 1 Capa 20:9 (Grok) + 4 páginas 16:9 sobre Clean Core.
-```
-
-```text
-Híbrido: capa PPT + 3 illustrations de estrutura + 1 scene de manutenção.
-```
-
-## Tom da entrega
-
-Antes: modo escolhido + shot list / blueprint curto.  
-Depois: contagem, uso, caminhos, o que é estável vs opcional.  
-Sem tratado longo de teoria — deixe a imagem falar.
+生成前简要说明输出方向、画幅、动作和固定角色元素。
+生成后说明哪些部分是固定设定、哪些部分是本次变量，并标记是否通过 QA。
