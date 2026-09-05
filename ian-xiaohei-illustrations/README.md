@@ -19,7 +19,8 @@
 ├── SKILL.md
 ├── assets/
 │   ├── huayexini-front-final.png
-│   └── black-cat-four-fish-badge.png
+│   ├── black-cat-four-fish-badge.png
+│   └── standard-sheet/          # 10 张标准设定图与徽章源文件
 ├── references/
 │   ├── huayexini-ip.md
 │   ├── style-dna.md
@@ -29,6 +30,8 @@
 └── examples/
     └── prompts.md
 ```
+
+标准设定图的编号、用途和不可变识别点见 `assets/standard-sheet/README.md`。
 
 ## 使用示例
 

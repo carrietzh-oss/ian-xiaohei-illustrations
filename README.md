@@ -23,6 +23,7 @@ ian-xiaohei-illustrations/
 ├── assets/
 │   ├── huayexini-front-final.png
 │   ├── black-cat-four-fish-badge.png
+│   ├── standard-sheet/          # 10 张标准设定图与徽章源文件
 │   └── examples/                 # 保留的上游参考素材
 └── references/
     ├── huayexini-ip.md           # 角色圣经
@@ -31,6 +32,8 @@ ian-xiaohei-illustrations/
     ├── composition-patterns.md    # 构图模式
     └── qa-checklist.md            # 验收清单
 ```
+
+标准设定图的编号、用途和不可变识别点见 `ian-xiaohei-illustrations/assets/standard-sheet/README.md`。
 
 ## 使用示例
 
