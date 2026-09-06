@@ -1,96 +1,35 @@
-﻿# Ecossistema Ian — roteamento visual
+# 花野稀泥视觉模式路由
 
-Três skills irmãs do autor [Ian (helloianneo)](https://github.com/helloianneo). Esta skill (**ian-xiaohei-illustrations**) é o **hub no Grok**: decide o modo certo e executa com as ferramentas `image_gen` / `image_edit`.
+本仓库保留原 Ian/Xiaohei 生态中的三类工作方式，并将出现的角色统一替换为花野稀泥。
 
-| Skill | Repo | Versão / papel | Visual | Quando usar |
-|-------|------|----------------|--------|-------------|
-| **Illustrations** (padrão desta skill) | [ian-xiaohei-illustrations](https://github.com/helloianneo/ian-xiaohei-illustrations) | Xiaohei **1.0** | Traço à mão em **branco puro**, diagrama-metáfora, rótulos vermelho/laranja/azul | Método, fluxo, estrutura, julgamento, comparação de produto, Clean Core, arquitetura conceitual |
-| **Scenes** | [ian-xiaohei-scenes](https://github.com/helloianneo/ian-xiaohei-scenes) | Xiaohei **2.0** | **Objeto real** + Xiaohei + ação física + vazio (estúdio branco) | Situação humana, ansiedade, rework, reunião, overload, ressonância “é sobre mim”, metáfora de vivência |
-| **Handdrawn PPT** | [ian-handdrawn-ppt](https://github.com/helloianneo/ian-handdrawn-ppt) | Páginas técnicas à mão (sem Xiaohei obrigatório) | Papel quase branco, linhas finas, pastéis, título + diagrama de página inteira | Capa 20:9 (Grok), deck de curso, “faça um PPT”, página de explicação técnica densa, contact sheet multipágina |
+| 模式 | 视觉与用途 | 触发信号 |
+| --- | --- | --- |
+| `illustrations` | 纯白、手绘、认知锚点和原创隐喻；默认正文配图 | 方法、结构、流程、判断、对比、文章插图 |
+| `scenes` | 一个真实物件＋一个物理动作＋留白；读取 `mode-scenes.md` | 真实场景、工作处境、情绪、物理动作、long-scroll |
+| `handdrawn-ppt` | 页面型技术解释图；读取 `mode-handdrawn-ppt.md` | PPT、slides、deck、课程页、文章封面 |
 
-## Decisão rápida
-
-```text
-Usuário quer PPT / slides / capa de artigo / deck de curso?
-  → modo handdrawn-ppt
-
-Usuário quer “cena real”, “objeto físico”, “situação de trabalho”, “long-scroll”, “história de projeto”, “Xiaohei 2.0”?
-  → modo scenes
-  → se também “long-scroll / trajetória / evolução do produto” → scenes + submodo long-scroll
-
-Usuário quer “explicar estrutura / fluxo / método / contraste de produto” em rascunho de quadro?
-  → modo illustrations (padrão)
-
-Mistura (ex.: artigo com método + dor humana)?
-  → shot list híbrido: marcar cada frame com modo illustrations | scenes
-  → opcional: 1 capa handdrawn-ppt 20:9 + corpos illustrations ou scenes
-```
-
-## Sinais de gatilho (PT-BR e originais)
-
-### → Illustrations (1.0)
-
-- fluxograma conceitual, metodologia, framework, loop I/O, antes/depois de sistema  
-- “diagrama absurdo”, “whiteboard”, “rascunho de produto”  
-- comparação técnica (ex.: RAP vs Tachyonix, Clean Core)  
-- shot list de âncoras **cognitivas**
-
-### → Scenes (2.0)
-
-- “é sobre mim”, dor do trabalhador, pressão, reunião, mensagem, revisão, filtro de currículo  
-- objeto real (telefone, cadeira, crachá, ampulheta, cabo…)  
-- “Xiaohei 2.0”, “cena física”, “estúdio com props”  
-- long-scroll / trajetória / retrospectiva de projeto / evolução de produto  
-
-### → Handdrawn PPT
-
-- “faça um PPT”, slides, curso, workshop, capa de blog, deck  
-- muitas páginas com título + um conceito por página  
-- menos foco no Xiaohei; mais na **página técnica** com tipografia curta  
-
-## O que **não** misturar no mesmo canvas
-
-| Evitar | Por quê |
-|--------|---------|
-| Traço 1.0 + props fotográficos 2.0 na mesma figura | DNA conflita (esboço vs estúdio) |
-| Cara de PPT do handdrawn-ppt dentro de illustrations | Illustrations **proíbe** título de tipo e moldura de slide |
-| Xiaohei mascote no handdrawn-ppt | PPT mode raramente usa personagem; no máximo um leitor/engenheiro discreto |
-
-## Híbridos recomendados (artigo longo)
-
-1. **Capa** `handdrawn-ppt` 21:9 (metáfora do tema).  
-2. **Corpo metodológico** `illustrations` 16:9 (âncoras de sistema).  
-3. **Corpo de dor/situação** `scenes` 16:9 (1–2 cenas de ressonância).  
-4. **Opcional** long-scroll `scenes` se for case/retrospectiva.
-
-Entregue pastas separadas:
+## 快速判断
 
 ```text
-assets/<slug>-illustrations/
-assets/<slug>-scenes/
-assets/<slug>-handdrawn-ppt/
-assets/<slug>-long-scroll/   # se houver
+用户说 PPT / slides / deck / 课程页 / 封面？
+  → handdrawn-ppt
+
+用户强调真实物件、具体处境、动作或 long-scroll？
+  → scenes
+
+用户要解释方法、流程、结构、判断或隐喻？
+  → illustrations
+
+用户明确说安装步骤、操作教程或四步流程？
+  → illustrations 的 tutorial-workflow 例外
 ```
 
-## Aspect ratios no Grok Imagine
+## 不要混用
 
-| Uso | Ratio válido |
-|-----|----------------|
-| Corpo illustrations / scenes / ppt | `16:9` |
-| Capa handdrawn-ppt / long-scroll scenes | `20:9` ou `19.5:9` |
-| **Inválido** | `21:9` (HTTP 422 na API) |
+- 默认 illustrations 的白板式手绘隐喻、scenes 的真实物件工作室和 handdrawn-ppt 的页面布局，不要无理由叠在同一张图里。
+- handdrawn-ppt 不强制放角色；只要角色出现，就使用花野稀泥，不恢复小黑。
+- 教程流程例外可以画简化软件窗口，但不能变成真实截图、科技 UI 或企业 PPT。
 
-## Skills instaladas vs modo embutido
+## 统一角色规则
 
-| Situação | Ação |
-|----------|------|
-| Só esta skill no Grok | Use os modos em `mode-scenes.md` e `mode-handdrawn-ppt.md` (condensados PT-BR + Grok) |
-| Skills irmãs clonadas em `~/.grok/skills/` | Prefira o `SKILL.md` completo da irmã; este hub só roteia |
-| Usuário cita o repo errado (`ian-xiaohei-scenessss…`) | Trate como **ian-xiaohei-scenes** |
-
-## Prioridade se o usuário for ambíguo
-
-1. Se disse **PPT / slides / capa** → handdrawn-ppt.  
-2. Se a emoção/situação domina o texto → scenes.  
-3. Caso contrário → **illustrations** (padrão deste repositório).  
-4. Em dúvida em 1 pergunta curta: “Quer rascunho de quadro (1.0), cena com objeto real (2.0) ou páginas tipo PPT?”
+所有模式共享花野稀泥角色圣经：先选择 `backpack` 背袋版或 `head-worn` 头套版；两版都保留半透明紫粉色脑洞袋和左右恰好两个对称扎结。短黑 Bob 发、紫色椭圆墨镜、粉色泡泡糖、灰色创作者套装、深葡萄紫腰封和黑猫蓝星四橙鱼徽章不可随机改变。
