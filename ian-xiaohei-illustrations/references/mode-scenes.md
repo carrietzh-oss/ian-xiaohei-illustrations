@@ -1,99 +1,40 @@
-﻿# Modo Scenes (Xiaohei 2.0) — condensado Grok
+# Scenes 模式（保留原 Xiaohei 2.0 能力，替换角色）
 
-> Fonte completa: [ian-xiaohei-scenes](https://github.com/helloianneo/ian-xiaohei-scenes).  
-> Use este arquivo quando o hub rotear para **scenes** e a skill irmã não estiver instalada.
+当用户强调真实物件、工作处境、情绪共鸣、物理动作、场景或 long-scroll 时使用此模式；不要把它和默认 1.0 白板式正文配图混成同一套画面。
 
-## Fórmula
-
-```text
-Xiaohei + objeto real + ação física + rótulos curtos + vazio narrativo
-```
-
-Objetivo: o leitor vê um **mini-set real** (estúdio branco), depois em ~1s pensa “isso sou eu”.
-
-**Não** é o whiteboard 1.0 (`style-dna.md` de illustrations). **Não** é página de PPT.
-
-## Dois submodos
-
-| Submodo | Formato Grok | Uso |
-|---------|--------------|-----|
-| **Padrão** | `image_gen` `aspect_ratio: "16:9"` | Um objeto + uma ação + 2–4 rótulos |
-| **Long-scroll (easter egg)** | `aspect_ratio: "20:9"` no Grok (`21:9` e `2.6:1` não são válidos na API Imagine) | Trajetória: 5–8 nós de objeto real ao longo de uma curva |
-
-## DNA visual 2.0 (padrão 16:9)
-
-- Fundo **branco puro** `#FFFFFF` (estúdio), superfície clara.  
-- **Objeto real** com luz/sombra unificada (não clipart, não UI screenshot).  
-- **Um** conflito físico central (puxar, filtrar, bloquear, carimbar, afundar…).  
-- Xiaohei **executa** a ação (mesmo critério de `xiaohei-ip.md`: se tirar ele e a cena “funciona sozinha”, falhou).  
-- 2–4 rótulos manuscritos curtos (PT-BR ou chinês).  
-- Acentos: azul / rosa / amarelo / verde / vermelho — só pontos de ritmo.  
-- Sem PPT, sem setas de arquitetura, sem logo não autorizado, sem lista de elementos do tema.
-
-## DNA long-scroll
-
-- Fundo **quase branco** sofisticado (não cinza sujo).  
-- Uma **curva preta fina** esquerda → direita.  
-- 5–8 nós: cada um com objeto real + Xiaohei + 1–3 linhas de anotação.  
-- Sem numeração tipo “passo 1–2–3”.  
-- Fatos pessoais/marca: **só** o que o usuário deu (sem inventar biografia).  
-- Substituir nós do exemplo oficial; não copiar trajetória do Ian.
-
-## Extração de história (antes de desenhar)
-
-1. Quem ressoa?  
-2. O que puxa / filtra / pressiona / devolve o personagem?  
-3. Qual **ação física** carrega isso?  
-4. Qual **objeto real** carrega a ação?  
-5. 2–4 palavras que batem na dor?
-
-## Tipos de cena (guia, não template)
-
-| Tipo de dor | Ação física típica | Objetos possíveis (reinventar) |
-|-------------|-------------------|--------------------------------|
-| Reunião / alinhamento puxa de volta | ser puxado por cabo/fio | cabo, cadeira de reunião, fone |
-| Overload de mensagens | não conseguir segurar o fluxo | telefone, bilhetes, papelada |
-| Alarme / produção / plantão | apagar fogo / pressionar sirene | sirene, relógio, cabo de rede |
-| Review / retrabalho | carimbar / devolver | lupa, carimbo, pilha de papéis |
-| Identidade / automação | trocar crachá / renomear | crachá, etiqueta, carimbo |
-| Filtro / perda de oportunidade | peneirar / deixar cair | funil, peneira, currículos-papel |
-
-**Anti-cópia:** aprenda proporção e peso visual dos exemplos oficiais; **não** clone props e pose.
-
-## Prompt base (`image_gen` 16:9)
+## 核心公式
 
 ```text
-16:9 Chinese/Portuguese article illustration, white studio #FFFFFF, real physical object mini-scene (product photo feel of one prop), not hand-drawn whiteboard diagram, not PPT.
-Xiaohei: small solid-black absurd creature, white dot eyes, thin legs, deadpan — must perform the core physical action with the real object.
-Scene: {objeto real} + {ação física clara em uma frase}.
-Sparse 2-4 short handwritten labels in {pt-BR|Chinese}: {rótulos}.
-Light accent dots blue/pink/yellow/green/red only for rhythm. Lots of empty white space. No screenshots, no UI, no logos, no flowchart arrows, no cute mascot, no dense text.
+花野稀泥 + 一个真实物件 + 一个物理动作 + 2–4 个短标签 + 空白叙事
 ```
 
-## Prompt long-scroll
+## 默认 16:9 场景
+
+- 纯白工作室背景和浅色表面。
+- 一个真实物件，光影统一，不做元素清单。
+- 一个清楚的物理冲突：被拉、过滤、阻挡、盖章、压住、沉下或回流。
+- 花野稀泥必须执行核心动作。
+- 花野稀泥使用已选变体：背袋版把半透明紫粉色脑洞袋放在背后；头套版直接套在头顶；两版都保留两个对称扎结、灰色套装、墨镜、泡泡糖和固定徽章。
+- 2–4 个短手写标签；不使用 PPT、密集箭头、真实 UI 截图或无关 Logo。
+
+## Long-scroll
+
+需要展示 5–8 个节点的轨迹时，使用近白背景、一条细手绘曲线和不均匀节点；不使用“步骤 1–2–3”式正式时间线。每个节点只保留一个真实物件、一个动作和 1–3 行短注释。
+
+## 提示词骨架
 
 ```text
-Ultra-wide panoramic story illustration, ultra-wide landscape scroll, refined near-white studio background.
-A thin hand-drawn black curved path left to right with 5-8 uneven real-object story nodes (not a numbered timeline, not a PPT process).
-At each node: real prop + Xiaohei doing a small physical action + 1-3 short handwritten notes in {pt-BR|Chinese}.
-Start left: {início}. End right: {conclusão}. Facts only from user brief: {fatos}.
-Clean, airy, photographic props, deadpan Xiaohei, no corporate infographic, no logos unless user provided.
+16:9 Chinese article scene, pure white studio background, one real physical object, one clear physical action, sparse handwritten Chinese labels, lots of empty space, hand-drawn line quality.
+Huayexini: cold-faced cute creator with short black bob hair, purple oval glasses, pink bubble gum, gray creator suit, and exactly one selected brainstorm-bag variant: `backpack` behind the shoulders with two symmetrical knots, or `head-worn` directly on top of the head with two symmetrical knots. Never combine variants. Huayexini must perform the physical action.
+Scene: {一个真实物件} + {一个物理动作}.
+Labels: {2–4 个短标签}.
+No original Xiaohei character, no dense flowchart, no PPT, no glossy UI, no watermark.
 ```
 
-## QA crítico (não entregar se falhar)
+## QA
 
-- Xiaohei na ação física.  
-- Um objeto principal (não inventário do tema).  
-- Parece mini-set real, não esboço 1.0 nem slide.  
-- Rótulos curtos legíveis.  
-- Não é clone de exemplo oficial.  
-- Long-scroll: curva contínua, nós desiguais, fatos ancorados.
-
-## Entrega
-
-```text
-assets/<slug>-scenes/
-assets/<slug>-long-scroll/   # se long-scroll
-```
-
-Ferramentas Grok: `image_gen`, `image_edit` (remover título, reforçar ação), `read_file` para QA visual.
+- 花野稀泥正在执行动作。
+- 只有一个主物件，没有主题元素清单。
+- 画面像真实小场景，不像默认白板流程图或 PPT。
+- 标签短且可读，事实只来自用户 brief。
+- long-scroll 使用连续曲线、不均匀节点，不复制旧案例轨迹。
