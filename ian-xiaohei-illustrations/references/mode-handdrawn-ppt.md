@@ -1,136 +1,42 @@
-﻿# Modo Handdrawn PPT — condensado Grok
+# Handdrawn PPT 模式（保留原页面型能力，替换角色）
 
-> Fonte completa: [ian-handdrawn-ppt](https://github.com/helloianneo/ian-handdrawn-ppt).  
-> Use quando o hub rotear para **páginas tipo PPT / capa / deck**.  
-> “PPT” aqui = **PNG de página inteira**, não `.pptx` editável.
+当用户明确说 PPT、slides、deck、课程页、文章封面或多页技术解释时使用。这里的 PPT 指 PNG 页面图，不承诺可编辑 `.pptx`。
 
-## Posicionamento
+## 工作流
 
-Transformar artigo, outline, notas ou ideia em **deck de imagens** estilo explicação técnica à mão (chinês ou PT-BR):
+1. 读取主题、受众、使用场景和材料。
+2. 规划 deck 故事线。
+3. 为每页选择一个页面构图原型。
+4. 锁定整套页面的纸张、线条、标题位置和尺度。
+5. 每页单独调用一次 `image_gen`。
+6. 需要总览时制作 contact sheet 或按顺序列出页面。
 
-1. Intake do material  
-2. Narrativa do deck  
-3. Arquétipo por página  
-4. DNA visual travado  
-5. Uma `image_gen` por página  
-6. Contact sheet se multipágina  
+## 页面 DNA
 
-**Fora de escopo:** PPTX/PDF/Keynote editáveis como entrega principal.
+- 近白背景、细手绘线、轻铅笔排线、少量浅蓝/鼠尾草绿/桃色/薰衣草色点缀。
+- 中央图解小而清楚，页面保留大块留白。
+- 标题克制，文字只使用用户提供的短文案。
+- 不使用厚重幻灯片边框、企业模板、光泽 3D 或照片拼贴。
+- 花野稀泥不是每页强制出现；如果出现，必须先固定 `backpack` 背袋版或 `head-worn` 头套版，保持恰好两个对称扎结，套装保持灰色；整套页面不得无理由切换变体。
 
-## Formatos Grok
+## 页面格式
 
-| Papel da página | `aspect_ratio` |
-|-----------------|----------------|
-| Capa de artigo / blog | `"20:9"` no Grok (`21:9` não é aceito) |
-| Corpo / slide padrão | `"16:9"` |
+| 页面角色 | 建议比例 |
+| --- | --- |
+| 文章封面 | 20:9 或用户指定比例 |
+| 标准正文页 | 16:9 |
 
-## DNA visual (V6 condensado)
+## 页面原型
 
-- Papel **quase branco** (não amarelo, não marrom craft).  
-- **Sem** moldura de slide grossa em volta da página (padrão moderno).  
-- Linhas finas à mão, hachura leve a lápis.  
-- Pastéis: azul claro, verde sálvia, pêssego, lavanda — marcas suaves.  
-- Diagrama **central pequeno**; muito espaço negativo.  
-- Título **contido** (não poster de marketing).  
-- Texto na imagem: **curto, exato, listado no prompt** (`Required text only`).  
-- Personagens: no máximo um leitor/engenheiro discreto; **Xiaohei não é obrigatório** (e em geral não entra).  
-- Consistência de deck: mesmo tom de papel, mesma “casca” (posição de título, peso de linha, escala).
+封面/隐喻、左右对照、轻量流程、循环、分类、矩阵、短列表和总结页。每页只讲一个观点，不把整篇正文塞入图片。
 
-## Arquétipos de página (escolha por semântica)
-
-| Arquétipo | Conteúdo típico |
-|-----------|-----------------|
-| Capa / metáfora | Uma imagem-ideia + título curto |
-| Esquerda/direita | Contraste A vs B |
-| Fluxo | 3–5 etapas leves (não arquitetura SAP densa) |
-| Ciclo | Loop de processo |
-| Classificação | 3–4 caixas leves |
-| Matriz | 2×2 simples |
-| Lista numerada curta | Método em 3 perguntas |
-| Resumo | 3 bullets + ícone central |
-
-Varie arquétipos no deck; não repita o mesmo layout em todas as páginas.
-
-## Workflow
-
-### 1. Intake
-
-Tema, público, cena de uso (artigo / curso / pitch), comprimento alvo, suficiência do material.  
-No máximo 1–3 perguntas se faltar o que muda o deck.
-
-### 2. Blueprint (sempre mental; escrito se pedirem só planejamento)
-
-Para cada página:
-
-- título  
-- ponto único  
-- arquétipo  
-- texto visível exato (curto)  
-- brief do diagrama  
-
-Defaults: artigo 8–12 páginas; ideia curta 5–8; módulo de curso 15–30 (confirmar com usuário).
-
-### 3. Style lock do deck (colar em todo prompt)
+## 提示词骨架
 
 ```text
-Deck style lock: near-white paper background, refined Chinese/Portuguese handdrawn technical explanation style, thin wobbly pen lines, light pencil hatching, soft pastel marks (light blue, sage, peach, lavender), large negative space, small central diagram, restrained title, no heavy slide border, no corporate PowerPoint template, no glossy 3D, no photoreal stock photo collage. Consistent title block position and line weight across pages.
+Near-white hand-drawn technical explanation page, thin wobbly pen lines, light pencil hatching, soft restrained pastel marks, large negative space, small central diagram, restrained title, no heavy slide border, no corporate PowerPoint template, no glossy 3D.
+Page role: {封面/正文页}.
+Main point: {一个观点}.
+Layout archetype: {页面原型}.
+Required text only: {用户提供的准确短文字}.
+If a character appears, use the fixed Huayexini IP, not the original Xiaohei; choose exactly one variant — backpack behind the shoulders or head-worn directly on top of the head — and keep the gray suit and double-knot construction consistent.
 ```
-
-### 4. Geração
-
-- Uma página = uma `image_gen`.  
-- Capa: `20:9`. Corpo: `16:9`.  
-- Incluir lista **Required text only** com as strings exatas.  
-- Se o texto sair errado: reduzir palavras → regenerar; ou aceitar composição e anotar risco (pós-processo tipográfico fica fora se o usuário não pedir).
-
-### 5. Contact sheet (multipágina)
-
-Se o usuário quiser visão geral: montar grade com shell (HTML/imagem) **ou** listar paths em ordem. Opcional; não bloqueia entrega.
-
-## Prompt de página (corpo 16:9)
-
-```text
-{Deck style lock}
-
-Page role: body illustration 16:9 handdrawn technical explanation page.
-Main point: {um ponto}.
-Layout archetype: {arquétipo}.
-Central diagram brief: {descrição curta do desenho}.
-Required text only (exact, short, handwritten-technical look):
-- Title: "{título}"
-- Labels: "{a}", "{b}", "{c}"
-No extra paragraphs. No Xiaohei unless user asked. Clean, airy, one idea.
-```
-
-## Prompt de capa (20:9 no Grok)
-
-```text
-{Deck style lock}
-
-Page role: ultra-wide article cover.
-One strong metaphor diagram centered or slightly left; restrained title; generous empty paper.
-Required text only:
-- Title: "{título}"
-- Optional subtitle: "{subtítulo curto ou vazio}"
-Not a body slide. Not a busy infographic.
-```
-
-## QA
-
-- Uma ideia por página.  
-- Texto curto e (na medida do possível) legível.  
-- Mesmo DNA em todo o deck.  
-- Capa não parece slide de corpo (e vice-versa).  
-- Sem “template PowerPoint roxo/azul corporativo”.  
-- Sem prometer PPTX.
-
-## Entrega
-
-```text
-assets/<slug>-handdrawn-ppt/
-  cover-....png|jpg
-  page-01-....png|jpg
-  ...
-```
-
-Relatar: pasta, contagem, tipo de deck, premissas, riscos de texto no modelo de imagem.
