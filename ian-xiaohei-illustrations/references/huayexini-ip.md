@@ -201,8 +201,8 @@
 | `references/huayexini-ip.md` | 本文档中的角色外貌、徽章、性格和禁用项 |
 | `references/style-dna.md` | 画风、固定配色、线稿、材质和构图规则 |
 | `references/prompt-template.md` | 基础 Prompt、负面 Prompt 和变体 Prompt |
-| `templates/` | 漫画、拼豆、贴纸、封面、情绪和道具模板 |
-| `assets/` | 正面主设定、透明 PNG、独立徽章、配色卡和视角图 |
+| `references/mode-scenes.md` / `references/mode-handdrawn-ppt.md` | Scenes、Long-scroll 和 Handdrawn PPT 模式细则 |
+| `assets/standard-sheet/` / `assets/derivatives/` | 标准角色、双形象、徽章和正式衍生资产 |
 
 接入时优先替换角色与画风参考，不要先改交互流程。先用 10 张测试图验证角色一致性，再进入 GitHub 提交和发布。
 
