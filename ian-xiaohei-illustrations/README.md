@@ -7,3 +7,8 @@
 默认风格是纯白留白、黑色细手绘线条和少量红/橙/蓝标签。用户明确要求安装/教程流程时，允许使用 3–5 格连续手绘分镜；每格一个核心动作，角色始终参与动作。
 
 先读 [`SKILL.md`](SKILL.md)，再按需读取 `references/` 中的双形象角色、风格、构图、Prompt 与 QA 规则。
+
+## 与上游小黑 Skill 的对齐
+
+本目录保留上游 Hub 的完整能力与目录职责：Illustrations 1.0、Scenes 2.0、Handdrawn PPT、模式路由、Grok 参数说明、Prompt、QA、真实物件场景、Long-scroll 和混合交付。唯一的角色替换是将小黑替换为花野稀泥，并固定为 `backpack` 背袋版或 `head-worn` 头套版。
+

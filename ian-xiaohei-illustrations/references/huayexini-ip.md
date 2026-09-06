@@ -199,8 +199,8 @@
 | --- | --- |
 | `SKILL.md` | 识别用户要生成漫画、拼豆、贴纸、封面或场景，并调用对应模板 |
 | `references/huayexini-ip.md` | 本文档中的角色外貌、徽章、性格和禁用项 |
-| `references/huayexini-style.md` | 画风、固定配色、线稿、材质和构图规则 |
-| `references/huayexini-prompts.md` | 基础 Prompt、负面 Prompt 和变体 Prompt |
+| `references/style-dna.md` | 画风、固定配色、线稿、材质和构图规则 |
+| `references/prompt-template.md` | 基础 Prompt、负面 Prompt 和变体 Prompt |
 | `templates/` | 漫画、拼豆、贴纸、封面、情绪和道具模板 |
 | `assets/` | 正面主设定、透明 PNG、独立徽章、配色卡和视角图 |
 
@@ -234,3 +234,8 @@
 标准参考资产：
 - assets/standard-sheet/huayexini-backpack-variant.png
 - assets/standard-sheet/huayexini-head-worn-variant.png
+
+
+## 12. 上游 IP 职责的一比一替换
+
+花野稀泥不是角落里的装饰，而是解释图、场景或流程中的“操作员”：必须执行核心概念动作或核心物理动作。移除角色后如果隐喻仍能独立成立，就需要重写构图或 Prompt，让角色重新参与动作。角色可以冷静、荒诞、克制，但不能泛化成普通吉祥物或普通可爱卡通。

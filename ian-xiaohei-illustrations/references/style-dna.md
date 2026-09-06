@@ -1,49 +1,52 @@
-# 花野稀泥画风 DNA（保留小黑 skill 的视觉方法）
+# DNA de estilo
 
-## 一句话
+## Em uma frase
 
-纯白、极简、手绘、留白、克制、怪诞、低科技产品草图感、中文手写感、结构清楚但不说明书；角色替换为花野稀泥。
+Branco puro, minimalista, traço à mão, muito vazio, contido, absurdo, sensação de rascunho de produto, anotações manuscritas curtas, estrutura clara sem virar manual.
 
-## 默认必须保持
+Como se alguém que vive de IA, produto, design e ferramentas de dev tivesse rabiscado em papel branco uma explicação rápida.
 
-- 16:9 横版正文配图。
-- 纯白背景 `#FFFFFF`：不要默认使用米色、暖灰、纸张纹理、渐变、阴影、噪点或复古纸感。
-- 黑色或深海军蓝细手绘线稿，略微抖动、不机械、不厚重、不做精致矢量边框。
-- 大量留白：主体约占画面 40%–60%，至少保留 35% 安静空白。
-- 少量中文手写批注：最多 5–8 处，每处尽量 2–8 个字。
-- 一张图只讲一个核心动作、结构、状态或隐喻。
-- 结构自然表达，不在图上写“Workflow、系统架构图、常见坑”等类型标题。
+## Obrigatório
 
-## 颜色使用
+- Ilustração de corpo de texto **16:9 horizontal** (`aspect_ratio: "16:9"` no `image_gen`).
+- **Fundo branco puro**: sem bege, cinza quente, textura de papel, gradiente, sombra, ruído ou “papel vintage”.
+- Traço principal **preto à mão**: linha fina, leve tremer, não mecânico, não vetor limpo, não contorno grosso.
+- **Muito espaço em branco**: sujeito cerca de **40%–60%** do quadro; pelo menos **35%** vazio.
+- Poucas anotações manuscritas: no máximo **5–8** (ideal ≤5), cada uma **curta** (PT-BR ou chinês conforme o artigo).
+- Uma imagem conta **apenas um** movimento, estrutura, estado ou metáfora central.
+- A estrutura aparece de forma natural — **não** escreva o nome do tipo de estrutura na imagem.
 
-- 黑色：主体线稿、结构、主要文字和低科技物件。
-- 橙色：主流程、路径、箭头和从 A 到 B 的移动关系。
-- 红色：重点问题、提醒、情绪点或结果。
-- 蓝色：补充说明、反馈、系统状态或第二层解释。
-- 花野稀泥的紫色只用于角色识别：紫粉脑洞袋、紫色椭圆墨镜、深葡萄紫腰封和少量角色细节。
-- 灰色套装保持灰色，不把紫色 IP 细节扩散成整张紫色背景。
+## Cores
 
-颜色要克制，宁可少不要多。
+- **Preto**: traço, personagem, caixas, estrutura, texto principal, objetos centrais.
+- **Vermelho**: destaque, problema, ponto emocional, alerta, resultado.
+- **Laranja**: fluxo principal, caminho, setas, automação, movimento A→B.
+- **Azul**: nota secundária, estado mental, estado do sistema, segunda camada, pista de IA/assistente.
 
-## 花野稀泥的 IP 例外
+Azul **não** é obrigatório. Cores com parcimônia.
 
-纯白背景、黑色手绘线稿和小黑式留白方法不可被角色替换改变；角色本身必须保留半透明紫粉色脑洞袋、左右对称双结、短黑 Bob 发、灰色创作者套装、紫色墨镜、泡泡糖、深葡萄紫腰封和黑猫四鱼蓝星徽章。脑洞袋只能使用 `backpack` 背袋版或 `head-worn` 头套版，见 `huayexini-variants.md`。
+## Absolutamente não
 
-## 双形象约束
+- Ilustração comercial / flat premium polido.
+- Infográfico de PPT, fluxograma formal, slide de curso.
+- Mascote fofo ou ilustração infantil.
+- Diagrama de arquitetura complexo.
+- UI “tech” ou screenshot de app.
+- Fundo complexo, gradiente, sombra, textura.
+- Explicar cada nó até o osso.
+- Título no canto: “Workflow”, “Fluxograma”, “Arquitetura”, “Armadilhas”, “Roadmap”, etc.
 
-- 背袋版：脑洞袋位于背后，两个对称结在袋体上方；头顶和头发保持可见。
-- 头套版：脑洞袋直接罩在头顶，像帽子/头套，左右各一个对称结；背后不再出现另一个袋子。
-- 同一张图、同一套分镜或同一组素材只能使用一个变体；不自动把两种形象混合。
+## Direção estética
 
-## 明确教程流程的例外
+Queremos: absurdo, criativo, interessante, limpo, inventivo.
 
-当用户明确要求安装流程、操作教程或 3–5 步流程图时，可以使用横向步骤面板、箭头和简化软件窗口。仍然保持纯白背景、黑色手绘线稿、留白和少量标注；不使用真实 App 截图、光泽 UI、企业 PPT 模板或长段说明。
+Não queremos: fofo, infantil, lotado, rígido.
 
-## 绝对不要
+## Nota Grok / Imagine
 
-- 不要商业插画、精致扁平插画、儿童插画或普通二次元美少女模板。
-- 不要正式 PPT 信息图、密集架构图、课程课件或科技感 UI。
-- 不要过度甜美、闪亮大眼、夸张大笑或把角色画成普通猫咪吉祥物。
-- 不要随机改变脑洞袋颜色、已选佩戴方式或扎结数量；只有用户明确要求时才切换两个合法变体。
-- 不要复杂背景、渐变、厚重阴影、纸纹和噪点。
-- 不要让文字数量替代视觉隐喻。
+Modelos de imagem **erram texto** com facilidade. Esta skill depende de **poucos rótulos curtos** e metáfora visual — se o conteúdo exigir números, tabelas ou labels exatos, avise o usuário ou reduza o texto na imagem em vez de lotar o prompt.
+
+
+## IP variant exception
+
+The only character variation is the selected `backpack` or `head-worn` brain-bag placement described in `references/huayexini-variants.md`.

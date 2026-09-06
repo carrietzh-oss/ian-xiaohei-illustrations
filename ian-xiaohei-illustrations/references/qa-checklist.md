@@ -1,49 +1,49 @@
-# 花野稀泥手绘配图 QA 清单
+# Checklist de QA (Grok)
 
-## 必过：角色一致性
+## Obrigatório (pass)
 
-- [ ] 一眼仍然是花野稀泥，而不是原始小黑、泛化女孩或普通猫咪。
-- [ ] 当前画面明确且只使用一个变体：`backpack` 背袋版或 `head-worn` 头套版。
-- [ ] 背袋版的袋体在背后、头顶保持可见；头套版的袋体直接罩在头顶，不能在背后再出现一个袋子。
-- [ ] 所选变体的脑洞袋左右恰好两个对称扎结，没有变成第三种佩戴方式。
-- [ ] 短直黑 Bob 发、紫色椭圆墨镜、粉色泡泡糖保持一致。
-- [ ] 灰色或灰紫色创作者套装、深葡萄紫腰封、宽腿短裤和深色鞋保持一致。
-- [ ] 胸口画面右侧徽章是黑猫＋蓝色异形星形＋恰好四条橙色小鱼。
-- [ ] 没有三个点、枪徽章、额外鱼、其他动物或混入原始小黑。
-- [ ] 表情仍是半垂眼、微抿嘴、淡腮红的冷脸萌，不是夸张大笑。
+- **16:9** horizontal.
+- Fundo **branco limpo**.
+- Tem **花野稀泥**.
+- Usa exatamente uma variante: `backpack` ou `head-worn`; nunca as duas.
+- 花野稀泥 na **ação central** (não só decoração).
+- Metáfora **nova** para o artigo (não clone de exemplo).
+- Absurdo, criativo, interessante.
+- Limpo: sujeito ≤ ~**60%** do quadro.
+- **Um** núcleo estrutural por imagem.
+- Rótulos **poucos, curtos, legíveis** (PT-BR ou chinês).
+- Laranja só em fluxo/setas; vermelho em alerta; azul em secundário.
 
-## 必过：小黑 skill 的视觉方法
+## Sinais de falha → ação no Grok
 
-- [ ] 默认是 16:9 横版正文配图。
-- [ ] 背景干净纯白，不是默认米色、纸纹、渐变、阴影或噪点。
-- [ ] 有细黑/深蓝手绘线稿，线条略有不规则感。
-- [ ] 主体约占 40%–60%，至少保留 35% 安静留白。
-- [ ] 红、橙、蓝批注少而短；紫色主要集中在 IP 固定细节。
-- [ ] 一张图只讲一个核心动作、结构、状态或隐喻。
-- [ ] 花野稀泥参与核心动作，不只是站在旁边。
-- [ ] 没有未经请求的类型标题、长段解释、商业插画或 PPT 模板。
+| Sinal | Ferramenta sugerida |
+|-------|---------------------|
+| Título no canto | `image_edit` — remover só o título |
+| 花野稀泥 fofo / canto | `image_edit` ou nova `image_gen` |
+| Cara de PPT / curso | regenerar com template “simplificar” |
+| Elementos/setas demais | regenerar com menos nós |
+| Texto longo ou ilegível | regenerar com ≤3–5 rótulos curtos |
+| Fundo sujo / textura | regenerar reforçando pure white |
+| Parecido com `assets/examples/` | regenerar trocando objeto + ação |
+| Precisa inspecionar texto/estilo | `read_file` na imagem gerada |
 
-## 必过：明确教程流程
+## Como iterar
 
-- [ ] 只有在用户明确要求时才使用多步骤面板。
-- [ ] 每个面板只有一个动作，顺序和用户给出的步骤一致。
-- [ ] 箭头表达方向但不过量，软件窗口是简化手绘示意，不是真实截图。
-- [ ] 标签短、准确，不凭空生成 API Key、密码或其他凭据。
-- [ ] 画布比例符合用户要求；用户指定 2560×1440 时最终文件为该像素尺寸。
+- **Comum demais:** 花野稀泥 sujeito + metáfora estranha coerente.  
+- **Complexo:** um movimento, 3–5 rótulos.  
+- **Fofo:** deadpan, not cute, not mascot.  
+- **PPT:** sem título, grade, setas em excesso.  
+- **Clone de exemplo:** mesma ideia, outro objeto e outra ação.  
+- **Texto errado:** edição local; se piorar, regenerar com menos texto.
 
-## 失败信号与处理
+## Entrega
 
-| 问题 | 处理 |
-| --- | --- |
-| 角色变成原始小黑或普通女孩 | 重新加入花野稀泥角色块，并使用正面参考资产 |
-| 背袋版误跑到头顶，或头套版误跑到背后 | 只编辑脑洞袋区域，明确当前是 `backpack` 还是 `head-worn`，并锁定同一变体 |
-| 灰色套装变色 | 只编辑服装区域，锁定灰色并保留紫色腰封 |
-| 徽章变形或鱼数量不对 | 使用 `assets/black-cat-four-fish-badge.png` 做局部编辑参考 |
-| 画面太满或太 PPT | 删除节点和装饰，只保留一个物理动作与留白 |
-| 文字错误 | 减少标签；必要时局部去字后再排版 |
-| 画面太甜 | 加入 deadpan、relaxed eyelids、tiny neutral mouth、not mascot |
-| 太像旧案例 | 保留核心意思，替换主物件、动作和布局 |
+Bom: o leitor pensa “que estranho…” e em ~1s entende a estrutura.
 
-## 交付判断
+Ruim: parece página de tutorial em vez de rascunho absurdo de produto no papel branco.
 
-高质量图应该让读者先觉得“有点怪”，然后在 1 秒内看懂结构；如果第一眼像课程页、商业海报或正式流程图，就不合格。
+## Entrega no workspace
+
+- Listar caminhos retornados pelo Grok (`images/…` ou path absoluto).  
+- Se o projeto pedir: copiar para `assets/<slug>-illustrations/01-….png`.  
+- Não sobrescrever assets sem confirmação.

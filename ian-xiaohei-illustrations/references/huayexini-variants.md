@@ -37,6 +37,6 @@
 
 - `assets/standard-sheet/huayexini-backpack-variant.png`：背袋版标准参考。
 - `assets/standard-sheet/huayexini-head-worn-variant.png`：头套版标准参考。
-- `assets/standard-sheet/huayexini-front-final.png`：补充正面角色参考。
-- `assets/standard-sheet/black-cat-four-fish-badge.png`：胸口徽章参考。
+- `assets/huayexini-front-final.png`：补充正面角色参考。
+- `assets/black-cat-four-fish-badge.png`：胸口徽章参考。
 

@@ -1,7 +1,7 @@
 # 花野稀泥 IP Skill 的入口元数据。
 interface:
-  display_name: "花野稀泥 IP Illustrations"
-  short_description: "保留小黑手绘方法，生成双形象花野稀泥 IP 的正文配图与视觉隐喻"
-  default_prompt: "使用 huayexini-illustrations Skill，先读取角色圣经、双形象规则、风格 DNA、构图模式、Prompt 模版和 QA 清单；保留原小黑 skill 的认知锚点与手绘方法，只使用花野稀泥的背袋版或头套版，并在整组图中固定一个变体。"
+  display_name: "花野稀泥 Visual Hub"
+  short_description: "完整保留小黑视觉工作流的花野稀泥双形象 Hub"
+  default_prompt: "使用 $huayexini-illustrations：保留小黑 Skill 的完整模式路由、认知锚点、隐喻、Scenes、Handdrawn PPT、Prompt 与 QA，只使用花野稀泥的背袋版或头套版，并在整组图中固定一个变体。"
 policy:
   allow_implicit_invocation: true

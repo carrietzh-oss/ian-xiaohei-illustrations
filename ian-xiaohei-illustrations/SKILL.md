@@ -1,113 +1,202 @@
 ---
 name: huayexini-illustrations
-description: 为中文文章、帖子、博客、Notion 文档、方法论、工作流、流程、结构、状态或隐喻生成花野稀泥 IP 的手绘正文配图、shot list、漫画、社交封面、拼豆、贴纸、场景和手绘技术页面；保留原 Ian/Xiaohei skill 的认知锚点、原创隐喻、单图生成和 QA 流程，只将出现的角色替换为花野稀泥。
+description: >
+  为中文文章、帖子、Notion、方法论、产品比较、工作痛点、复盘、课程和 PPT 生成视觉内容；
+  完整路由 Illustrations 1.0、Scenes 2.0 与 Handdrawn PPT，保留小黑 Skill 的全部工作流、
+  认知锚点、原创隐喻、真实物件、页面型能力和 QA，只将角色替换为花野稀泥，并固定使用
+  背袋版或头套版两种 IP 形象。
 metadata:
-  short-description: "生成保持花野稀泥 IP 一致性的手绘正文配图"
+  short-description: "花野稀泥版 Illustrations、Scenes 与 Handdrawn PPT 视觉 Hub"
 ---
+# 花野稀泥 Visual Hub — Illustrations · Scenes · Handdrawn PPT (Grok)
 
-# 花野稀泥手绘正文配图 Skill
+## Posicionamento
 
-## 继承原则
+Esta skill é o **hub em português BR** para a família visual do Ian no **Grok Build**. Por padrão este repositório entrega o modo **Illustrations (花野稀泥 1.0)**, mas **deve contemplar e rotear** os projetos irmãos:
 
-这是 `ian-xiaohei-illustrations` 的花野稀泥适配版。保留原 skill 的核心能力、判断方式和工作流程：先理解正文，再寻找认知锚点，输出 shot list，重新发明一个清楚而荒诞的隐喻，逐张生成并按 QA 清单检查。
+| Modo | Projeto | Repo |
+|------|---------|------|
+| `illustrations` | Ian 花野稀泥 Illustrations (1.0) | https://github.com/helloianneo/ian-xiaohei-illustrations |
+| `scenes` | Ian 花野稀泥 Scenes (2.0) | https://github.com/helloianneo/ian-xiaohei-scenes |
+| `handdrawn-ppt` | Ian Handdrawn PPT | https://github.com/helloianneo/ian-handdrawn-ppt |
 
-唯一的角色替换是：原来的小黑不再作为默认 IP 出现；需要角色参与时，统一使用花野稀泥。不要因为换了 IP 就把它改成普通可爱卡通、商业插画、PPT 模板或密集说明书。
+> URL com typos tipo `ian-xiaohei-scenesssssssssss` → tratar como **ian-xiaohei-scenes**.
 
-## 核心定位
+### Em uma frase por modo
 
-为中文文章设计和生成 16:9 横版正文配图。目标不是把整篇文章塞进图片，而是把一个关键判断、流程、结构、状态或隐喻画成清爽、怪诞、有创意、可读但不死板的手绘解释图。
+- **Illustrations 1.0:** julgamento/fluxo/estrutura → rascunho de quadro absurdo, traço preto, fundo branco puro, rótulos vermelho/laranja/azul. 花野稀泥 na ação conceitual.  
+- **Scenes 2.0:** situação humana → mini-set com **objeto real** + 花野稀泥 na ação física; opcional **long-scroll** de trajetória.  
+- **Handdrawn PPT:** material → **páginas PNG** estilo explicação técnica à mão (Capa 20:9 (Grok), corpo 16:9). 花野稀泥 em geral **não** entra.
 
-默认视觉语言继承小黑 skill：纯白留白、黑色手绘线稿、少量红橙蓝批注、低科技物件、动作驱动的隐喻。花野稀泥的紫色双结脑洞袋、紫色墨镜、深葡萄紫腰封、灰紫灰色套装和固定徽章是角色识别色，不把整张图染成紫色。
+## Passo 0 — Roteamento (obrigatório)
 
-## 先读这些参考
-
-按任务需要读取，不要一次塞满上下文：
-
-- `references/style-dna.md`：原小黑手绘风格的保留规则，以及花野稀泥 IP 色彩例外。
-- `references/huayexini-ip.md`：角色共同外貌、服装、徽章、性格和禁用项。
-- `references/huayexini-variants.md`：背袋版与头套版的两套固定佩戴方式、选择规则和连续性约束。
-- `references/composition-patterns.md`：结构类型、原创隐喻方法和反复刻规则。
-- `references/prompt-template.md`：通用生图、局部编辑和明确教程流程模板。
-- `references/qa-checklist.md`：生成后的角色、风格、构图和文字检查。
-- `references/mode-scenes.md`：用户明确要求真实物件、物理动作或 2.0 场景时读取。
-- `references/mode-handdrawn-ppt.md`：用户明确要求手绘技术页面、封面或 deck 时读取。
-- `references/ecosystem-routing.md`：多个视觉模式同时出现时读取。
-- `assets/examples/`：只作低频风格校准，不默认加载或照抄构图。
-
-## 请求路由
-
-| 用户需求 | 输出方向 |
-| --- | --- |
-| 中文正文、文章插图、方法论、流程、结构、状态、隐喻 | `illustrations`，默认 16:9 单张正文配图 |
-| 分析文章哪里值得配图、暂时不生图 | `shot-list`，输出 4–8 张认知锚点清单 |
-| 明确要求安装流程、操作步骤、教程路径或四步流程图 | `tutorial-workflow`，允许 3–5 个手绘步骤面板 |
-| 小红书封面、视频贴图、海报 | `social-cover` |
-| 2–4 格连续情节或失败到成功 | `comic` |
-| 拼豆、像素、十字绣参考 | `bead-art` |
-| 透明贴纸、徽章、表情 | `sticker-badge` |
-| 真实物件、场景、物理动作、工作处境 | `scenes`，读取 `mode-scenes.md` |
-| 页面型技术解释、文章封面、课程 deck | `handdrawn-ppt`，读取 `mode-handdrawn-ppt.md` |
-
-用户说“小黑风格”时，解释为保留手绘线条、留白、克制配色、怪诞隐喻和信息组织方式；角色仍然必须是花野稀泥。
-
-## 工作流
-
-### 1. 消化正文
-
-先读用户给的正文、链接、Notion 页面、Markdown、截图或主题，提炼：
-
-- 核心观点是什么；
-- 哪些段落承担认知转折；
-- 哪些内容适合用图解释；
-- 哪些内容只适合文字，不需要图。
-
-不要平均配图。优先选择核心判断、两个断点、输入输出闭环、分流、前后对比、承接路径、常见坑或角色状态变化等认知锚点。
-
-### 2. 先出配图策略
-
-如果用户只是要求分析配图位置、暂时不生图，先给 shot list。每张写清楚：放在哪个段落后、主题、核心意思、结构类型、花野稀泥在做什么、建议元素和短标注词。默认 4–8 张；短文 1–3 张，长文也不要轻易超过 9 张。
-
-### 3. 选择结构并重新发明隐喻
-
-每张图只表达一个主要认知结构。优先从 `composition-patterns.md` 选择一种结构，再把抽象概念转成一个物理动作和一个低科技物件。花野稀泥必须执行核心动作，而不是站在画面角落当装饰。
-
-不要打开示例图后直接复制“断点传送带、拉判断杆、素材鱼、漏斗、盖章工具箱”等旧构图，除非用户明确要求复刻某张图。
-
-### 4. 单张生成
-
-用户明确要求生成、输出或做图时，使用内置 `image_gen`，每张独立生成；不要把用户要求的多张独立图片偷偷拼成一张。每张提示词都要锁定花野稀泥 IP、画幅、主体动作、视觉 DNA、短文字和负面约束。
-
-默认正文配图使用 16:9、纯白背景、大量留白和少量手写批注。只有用户明确要求教程流程时，才使用 3–5 个带箭头的手绘面板；面板内可以画简化的浏览器/软件窗口，但不要变成真实截图、科技 UI 或 PPT 模板。每次先选择一个固定脑洞袋变体，连续面板中保持不变。
-
-### 5. 检查与迭代
-
-生成后逐项读取 `references/qa-checklist.md`。若角色漂移、脑洞袋位置错误、灰色套装变色、徽章不对、文字错误、背景过满或画面变成 PPT，优先做一次针对单个问题的局部编辑或重生成，不要整体重写无关内容。
-
-### 6. 保存与交付
-
-在 workspace 内工作时，将最终图保存到：
+Antes de gerar, leia `references/ecosystem-routing.md` e declare o modo de cada entrega:
 
 ```text
-assets/<article-slug>-illustrations/
+Modo: illustrations | scenes | handdrawn-ppt | híbrido
+Submodo (se scenes): padrão 16:9 | long-scroll
+Submodo (se ppt): Capa 20:9 (Grok) | corpo 16:9 | deck N páginas
 ```
 
-多张按 `01-topic-name.png`、`02-topic-name.png` 顺序命名。保留原始生成文件，不覆盖已有资产，除非用户明确要求替换。交付时说明生成数量、每张用途、保存路径，以及哪些图最稳。
+| Pedido do usuário | Modo |
+|-------------------|------|
+| Fluxo, método, Clean Core, comparação de produto, whiteboard | `illustrations` |
+| Dor, reunião, overload, “é sobre mim”, objeto real, 花野稀泥 2.0 | `scenes` |
+| Trajetória, retrospectiva, evolução do produto em friso | `scenes` + long-scroll |
+| PPT, slides, curso, capa de artigo, deck | `handdrawn-ppt` |
+| Artigo completo com capa + método + dor | **híbrido** (pastas separadas) |
 
-## 花野稀泥角色锁定
+Se ambíguo e a escolha mudar o resultado: **uma** pergunta curta. Senão, default = `illustrations`.
 
-- 使用大头短身的冷脸萌 Q 版创意实验者。
-- 短直黑色 Bob 发、紫色椭圆墨镜、粉色泡泡糖和灰色/灰紫色剪裁感创作者套装保持不变。
-- 脑洞袋只能选择 `backpack` 背袋版或 `head-worn` 头套版；两种形象都必须参照 `references/huayexini-variants.md`，不得擅自发明第三种形态。
-- 背袋版把紫粉色透明袋放在背后；头套版把紫粉色透明袋直接套在头顶，左右各一个、合计两个对称扎结。两者不能同时出现。
-- 深葡萄紫腰封、宽腿短裤和深色鞋保留。灰色套装不得换成粉、紫、蓝、白或黑色主服装。
-- 胸口画面右侧固定使用黑猫＋亮蓝色不规则星形底＋恰好四条橙色小鱼徽章；不得出现三个点、枪徽章、额外鱼或其他动物。
-- 表情保持半垂眼、微抿嘴、淡淡腮红的冷脸萌气质；笑点来自动作和场景反差，不靠夸张大笑。
-- 角色出现在连续分镜或系列图中时，先选定一个变体，所有画面保持同一佩戴方式，除非用户明确要求变体切换。
+**Não misture DNAs no mesmo canvas** (traço 1.0 + props foto 2.0, ou slide com título de PPT dentro de illustrations).
 
-## 输出边界
+## Runtime: Grok Build
 
-- 默认生成“正文配图”，不是整篇课程页、商业 KV 或可编辑 PPTX。
-- 默认交付最终 PNG 与可复用的 shot list；不把任务擅自扩展成 PPTX、PDF、SVG 或整套品牌系统。
-- 未提供准确文案时不要擅自添加大段文字；图片内文字只保留短、明确、必要的标签。
-- 需要编辑时只改变用户指定区域，保持角色身份、脑洞袋、灰色套装、徽章、构图和画风不变。
-- 不要把原始小黑角色、黑色怪物或其他 IP 与花野稀泥混用。
+| Situação | Ferramenta |
+|----------|------------|
+| Nova imagem | `image_gen` + `aspect_ratio` adequado |
+| Editar | `image_edit` |
+| QA visual | `read_file` na imagem |
+| Consistência de personagem/deck | mesma descrição de IP/style lock; opcional ref em `image_edit` |
+
+### Aspect ratios
+
+| Modo | Ratio |
+|------|-------|
+| illustrations (corpo) | `16:9` |
+| scenes (padrão) | `16:9` |
+| scenes long-scroll | `20:9` (Grok; `21:9` inválido na API) |
+| handdrawn-ppt capa | `20:9` (Grok; `21:9` inválido na API) |
+| handdrawn-ppt corpo | `16:9` |
+
+Orientação geral de prompt Imagine: skill `imagine` do Grok; **DNA do modo escolhido** tem prioridade.
+
+## Mapa de referências
+
+Leia **só o necessário** do modo ativo:
+
+### Sempre (hub)
+
+- `references/ecosystem-routing.md` — decisão de modo e híbridos.
+
+### Modo `illustrations` (completo neste repo)
+
+- `references/style-dna.md`
+- `references/huayexini-ip.md`
+- `references/huayexini-variants.md`
+- `references/composition-patterns.md`
+- `references/prompt-template.md`
+- `references/qa-checklist.md`
+- `assets/examples/` — calibração esporádica; não copiar composição.
+
+### Modo `scenes` (condensado neste repo)
+
+- `references/mode-scenes.md`
+- Se a skill irmã existir em `~/.grok/skills/ian-xiaohei-scenes/`, **prefira o SKILL.md e references oficiais**.
+
+### Modo `handdrawn-ppt` (condensado neste repo)
+
+- `references/mode-handdrawn-ppt.md`
+- Se existir `~/.grok/skills/ian-handdrawn-ppt/`, **prefira o pacote oficial**.
+
+## IP identity lock — exactly two variants
+
+The output character is always 花野稀泥. Before generating, select exactly one brain-bag variant and keep it fixed across the image set:
+- `backpack`: the translucent purple-pink double-knot brain-bag is worn on the back; the short black Bob hair remains visible.
+- `head-worn`: the same bag is worn directly on top of the head; it is not a backpack, shoulder bag, hanging bag, or hand-held bag.
+- Both variants share the gray/gray-purple creator outfit, purple oval sunglasses, pink bubble gum, deadpan-cute expression, and the black-cat + blue star + exactly four orange fish badge.
+- Never combine the two variants in one image or change the selected variant without the user explicitly requesting a switch.
+- If the user does not specify a variant, prefer `backpack` for movement/full-body compositions and `head-worn` for desk, study, tutorial, or close-up compositions.
+
+## Fluxos por modo
+
+### A) Illustrations (1.0) — detalhe completo
+
+1. Digestão → âncoras cognitivas.  
+2. Shot list (se só planejar).  
+3. `image_gen` 16:9 por âncora (template em `prompt-template.md`).  
+4. QA `qa-checklist.md`; `image_edit` se preciso.  
+5. Salvar em `assets/<slug>-illustrations/`.
+
+Regras-chave: fundo branco puro; traço preto; 花野稀泥 na ação; ≤5–8 rótulos curtos; sem PPT; metáfora nova (não copiar `assets/examples/`).
+
+### B) Scenes (2.0) — ver `mode-scenes.md`
+
+1. Extrair **situação** + ação física + objeto real.  
+2. Shot list com ressonância (não só estrutura).  
+3. `image_gen` 16:9 (ou 20:9 long-scroll).  
+4. QA: mini-set real, 花野稀泥 na ação, sem inventário de props.  
+5. `assets/<slug>-scenes/` ou `…-long-scroll/`.
+
+### C) Handdrawn PPT — ver `mode-handdrawn-ppt.md`
+
+1. Intake + blueprint (título, ponto, arquétipo, texto exato).  
+2. Style lock do deck em todos os prompts.  
+3. Capa `20:9` + páginas `16:9`, uma `image_gen` cada.  
+4. QA de consistência de deck e texto curto.  
+5. `assets/<slug>-handdrawn-ppt/`.  
+6. **Não** entregar PPTX salvo pedido explícito fora desta skill.
+
+### D) Híbrido
+
+Declarar tabela frame → modo. Gerar por modo. Pastas separadas. Entregar mapa:
+
+```text
+capa → handdrawn-ppt
+01–04 → illustrations
+05–06 → scenes
+```
+
+## Idioma
+
+| Origem do texto | Rótulos / títulos na imagem |
+|-----------------|----------------------------|
+| PT-BR | Português curto |
+| Chinês | Chinês curto |
+| Misto | Idioma dominante do trecho |
+
+Modelos de imagem falham com texto longo: **menos rótulos, mais estável**.
+
+## Instalação no Grok
+
+```powershell
+# Hub (este repo)
+$dest = Join-Path $env:USERPROFILE ".grok\skills\ian-xiaohei-illustrations"
+Copy-Item -Recurse -Force ".\ian-xiaohei-illustrations" $dest
+```
+
+Opcional — skills irmãs completas:
+
+```powershell
+# Após clonar os repos oficiais
+Copy-Item -Recurse -Force ".\ian-xiaohei-scenes\ian-xiaohei-scenes" (Join-Path $env:USERPROFILE ".grok\skills\ian-xiaohei-scenes")
+Copy-Item -Recurse -Force ".\ian-handdrawn-ppt\ian-handdrawn-ppt" (Join-Path $env:USERPROFILE ".grok\skills\ian-handdrawn-ppt")
+```
+
+Com as três instaladas, o hub **roteia**; a execução profunda usa o pacote irmão se presente.
+
+## Uso típico
+
+```text
+Use $huayexini-illustrations (hub Ian).
+Para o texto abaixo: roteie o modo certo e gere as imagens no Grok.
+Se for método → illustrations; se for dor/situação → scenes; se for deck → handdrawn-ppt.
+```
+
+```text
+Modo scenes: 3 cenas 花野稀泥 2.0 com objeto real sobre pressão de release.
+```
+
+```text
+Modo handdrawn-ppt: 1 Capa 20:9 (Grok) + 4 páginas 16:9 sobre Clean Core.
+```
+
+```text
+Híbrido: capa PPT + 3 illustrations de estrutura + 1 scene de manutenção.
+```
+
+## Tom da entrega
+
+Antes: modo escolhido + shot list / blueprint curto.  
+Depois: contagem, uso, caminhos, o que é estável vs opcional.  
+Sem tratado longo de teoria — deixe a imagem falar.

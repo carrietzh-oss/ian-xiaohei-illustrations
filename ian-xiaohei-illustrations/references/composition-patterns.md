@@ -1,65 +1,80 @@
-# 构图模式与原创规则
+# Padrões de composição e originalidade
 
-每张图选择一种主要结构，不要把多个结构硬塞在同一张图里。
+## Tipos de estrutura (escolha um)
 
-## 基础结构类型
+### Workflow (fluxo)
 
-### Workflow 流程
+Entrada → processamento → saída, produção de conteúdo, workflow de IA, automação.  
+Esquerda entrada, meio 花野稀泥/máquina, direita saída; setas laranja no fluxo principal.
 
-适合输入 → 处理 → 输出、内容生产、AI 工作流和自动化链路。左侧输入，中间花野稀泥或怪机器处理，右侧输出，用橙色箭头表达主流向。
+### Recorte de sistema
 
-### 系统局部
+Fontes, filtros, banco, render, pedaço de agents.  
+Só **3–5** módulos; 花野稀泥 numa ação-chave.
 
-适合信息来源、过滤器、数据库、渲染器和 agent 系统局部。只画 3–5 个核心模块，让花野稀泥参与其中一个关键动作。
+### Antes e depois
 
-### 前后对比
+Caos/ordem, manual/automático, disperso/reunido.  
+Esquerda caos, direita estável, seta laranja no meio.
 
-适合混乱/有序、手动/自动、分散/收拢、焦虑/稳定。左侧原始状态，右侧结果，中间用一个清楚动作连接。
+### Estados do personagem
 
-### 角色状态
+Dor do usuário, ansiedade de ferramenta, travado → rodando.  
+**2–4** mini-estados, rótulo curto cada.
 
-适合用户痛点、创作者状态、工具太多、信息焦虑和卡住到跑起来。使用 2–4 个小状态，每个状态只配一个短标注。
+### Metáfora conceitual
 
-### 概念隐喻
+Fábrica, armazém, caixa-preta, máquina de workflow.  
+Um objeto/máquina grande, poucas entradas, uma saída.
 
-适合内容工厂、信息仓库、脑内黑盒、工作流机器和自动日报。使用一个有记忆点的怪物件或低科技机器，花野稀泥负责物理动作。
+### Camadas de método
 
-### 方法分层
+Framework, stack, camadas de sistema.  
+Caixas em camadas (**não** pirâmide formal); 花野稀泥 montando ou carregando.
 
-适合方法论框架、系统层级和能力栈。使用一层层盒子或工作台，不要画正式金字塔；让角色搬砖、搭建、标记或校准。
+### Mapa / rota
 
-### 地图路线
+Ideia → lançamento, jornada, handoff, aprendizado.  
+Caminho sinuoso, poucos nós; 花野稀泥 puxa o fio ou anda.
 
-适合从想法到上线、用户路径、内容承接路径和学习路线。用一条弯曲路径与少量节点，角色牵线、走路、开门或回收。
+### Mini-quadrinhos
 
-### 小漫画分镜
+Fracasso → sucesso, processo real.  
+**2–4** quadros; um movimento cada.
 
-适合失败到成功、真实过程、吐槽和使用前后变化。2–4 格，每格只表达一个动作。
+## Metáfora original (3 passos)
 
-### 明确教程流程
+1. Conceito abstrato → **ação física** (travar, vazar, pesar, triar, fermentar, abrir, dobrar…).
+2. Sistema → **objeto low-tech** (máquina quebrada, caixa, gaveta, cano, poço, escada, balança…).
+3. 花野稀泥 **executa** a ação (preso na máquina, puxa fio, guarda porta, carrega, conserta…).
 
-仅在用户明确要求安装教程、操作步骤或流程图时使用。可画 3–5 个横向或阶梯式面板、编号和手绘箭头；每格一个动作，软件窗口只做简化解释，不使用真实截图或密集 UI。
+### Pool de objetos (1–2 por imagem)
 
-## 原创隐喻生成法
+Caixa de papelão, gaveta, máquina velha, funil, balança, caixa de correio, porta, poço, escada, cano, novelo, comporta, disco, caixa-preta, furador, máquina de massas, varal, estação estranha.
 
-1. 把抽象概念换成一个物理动作：卡住、漏掉、变重、分拣、沉淀、发酵、开门、折叠、拆包或回流。
-2. 把系统结构换成一个低科技物件：纸箱、抽屉、旧机器、漏斗、秤、邮筒、门、井、梯子、水管、线团、闸门、转盘、黑盒或怪工位。
-3. 让花野稀泥承担动作：拉、扛、塞、捞、压、称、缝、剪、拧、守、推、接、拆、标记或回收。
+### Pool de ações
 
-只选 1–2 个主物件，不要堆成元素清单。动作必须服务核心意思。
+Puxar, carregar, enfiar, pescar, pressionar, pesar, costurar, cortar, apertar, guardar, empurrar, receber, desmontar, marcar, reciclar.
 
-## 双形象构图规则
+## Anti-cópia
 
-- 先选择 `backpack` 背袋版或 `head-worn` 头套版，再设计动作和构图。
-- 背袋版适合全身移动、出门、携带工具和“背着想法上路”；头套版适合桌前学习、思考、教程和近景脑洞。
-- 同一套图保持同一个变体。不要让角色既头顶套袋又背着另一个袋子，也不要让袋子在相邻画面中无理由换位。
+Não abra nem recrie `assets/examples/` por padrão — só calibração de densidade de linha, vazio, cor e temperamento.
 
-## 反复刻规则
+Sem pedido explícito de “copie esta composição”, **não** reutilize:
 
-不要默认打开或复刻 `assets/examples/`。示例只用于校准线条密度、留白、颜色克制和角色参与方式。
+- esteira com dois breakpoints  
+- alavanca de julgamento na máquina de conteúdo  
+- funil tráfego / confiança / conversão  
+- peixe multi-uso  
+- caminho de handoff clássico  
+- três camadas de fontes  
+- três 花野稀泥 (megafone / ponte / porta)  
+- toolbox de carimbo  
+- placa nas armadilhas comuns  
 
-除非用户明确要求复刻，否则不要直接复用“传送带两个断点、拉判断杆、漏斗分拣、切素材鱼、牵承接路径、三层信息源、盖章工具箱、常见坑路径”等旧构图。保持认知意思，换掉主物件和动作。
+Temas parecidos → **outra** metáfora. Handoff pode ser cauda do conteúdo na maçaneta; multi-uso pode ser papel prensado em formatos, não peixe.
 
-## 一秒判断
 
-每张图生成前先回答：观众一秒钟能看懂什么？如果去掉花野稀泥，核心动作仍能完全成立，说明角色太装饰，需要重写构图。
+## IP variant continuity
+
+Choose one of the two 花野稀泥 variants before composing: `backpack` for movement/full-body scenes or `head-worn` for desk/tutorial/close-up scenes. Do not mix or silently switch variants.

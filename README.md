@@ -51,3 +51,8 @@ ian-xiaohei-illustrations/
 本仓库保留原项目的 MIT License 和来源说明。花野稀泥角色设定、徽章、配色、Prompt 与新增资产按本仓库中的角色圣经执行；重新发布前请确认新增图片资产的使用权。
 
 原始项目：<https://github.com/ggampp/ian-xiaohei-illustrations>
+
+## Skill 对齐状态
+
+本仓库的 `ian-xiaohei-illustrations/` 目录按上游小黑 Skill 的完整 Hub 结构维护：Illustrations 1.0、Scenes 2.0、Handdrawn PPT、模式路由、Prompt、QA、真实物件、Long-scroll 与混合模式均保留。角色唯一替换为花野稀泥，并且只允许背袋版、头套版两种脑洞袋形象。
+

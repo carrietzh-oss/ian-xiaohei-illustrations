@@ -1,86 +1,100 @@
-# 花野稀泥生图提示词模板
+# Template de prompt — Grok `image_gen` / `image_edit`
 
-每张图单独生成。先锁定角色和视觉 DNA，再只替换当前主题、动作、道具或情绪中的一到两个变量。
+## Regras de montagem (Grok Imagine)
 
-## 通用正文配图模板
+- **Uma cena por chamada** de `image_gen`.
+- Sempre passe **`aspect_ratio: "16:9"`** em novas gerações.
+- Escreva o prompt em **prosa natural** (português e/ou inglês). O DNA visual em inglês abaixo costuma estabilizar o estilo; tema e composição podem ir em PT-BR.
+- Front-load: sujeito (花野稀泥 + ação) → metáfora → estilo → composição → rótulos.
+- Prefira dizer o que **deve existir** (descrições positivas). Mantenha a lista de exclusões do DNA porque o estilo desta skill depende de “não ser PPT”.
+- Rótulos: **curtos**. Modelo de imagem erra com texto longo — menos é mais.
+- Várias imagens do artigo: várias chamadas; prompts distintos.
+
+## Template principal (`image_gen`)
+
+Substitua as chaves `{…}`. Envie o bloco inteiro (ou uma prosa condensada equivalente) no campo `prompt`.
 
 ```text
-Generate one standalone 16:9 horizontal Chinese article illustration.
+Ilustração horizontal 16:9 para corpo de artigo, rascunho de produto absurdo e limpo.
 
 Visual DNA:
-Pure white background. Minimalist black or deep navy hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red/orange/blue handwritten Chinese annotations. Clean absurd low-tech product-sketch feeling. No gradients, no heavy shadows, no paper texture, no glossy UI, no commercial vector style, no PPT infographic look.
+Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red, orange, and blue handwritten short annotations. Clean absurd product-sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI, no top-left title banner.
 
-Recurring IP character required:
-花野稀泥，a cold-faced cute Q-version creative experimenter with short straight black bob hair, purple oval sunglasses, pink bubble gum, a translucent purple-pink brainstorm bag, gray tailored creator suit, deep grape-purple sash, wide-leg shorts, dark shoes, and a chest badge made of a black cat, a bright blue irregular star shape, and exactly four orange fish. The gray suit must stay gray. 花野稀泥 must perform the core action, not decorate the scene. Keep the face deadpan and calm, not a big smile.
+Personagem recorrente (obrigatório):
+花野稀泥 / 花野稀泥 — cold-faced cute Q-version creative experimenter with short black Bob hair, the selected translucent purple-pink double-knot brain-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, deep grape-purple waist belt, and the black-cat + blue star + exactly four orange fish badge. 花野稀泥 performs the core conceptual action; the character is not a corner decoration. Serious, slightly bizarre, not generic cute.
 
-Appearance variant — choose exactly one:
-1. `backpack`: the translucent purple-pink bag is worn behind the shoulders, with exactly two symmetrical purple knots; the top of the head remains uncovered.
-2. `head-worn`: the translucent purple-pink bag is worn directly on top of the head like a hood/cap, with exactly two symmetrical knots; it is not a backpack or shoulder bag.
-Keep the chosen variant unchanged across a series. Never combine both bags or invent a third placement.
+Tema: {tema da ilustração}
 
-Theme:
-{正文配图主题}
+Tipo de estrutura (não escrever o nome na imagem): {Workflow | recorte de sistema | antes e depois | estados | metáfora conceitual | camadas | mapa-rota | mini-quadrinhos}
 
-Structure type:
-{Workflow / 系统局部 / 前后对比 / 角色状态 / 概念隐喻 / 方法分层 / 地图路线 / 小漫画分镜}
+Ideia central: {uma frase com o que o leitor deve entender}
 
-Core idea:
-{这张图要表达的核心意思}
+Composição: {onde está o 花野稀泥, o que faz, objeto low-tech principal, como o fluxo se lê da esquerda para a direita ou no centro}
 
-Composition:
-{花野稀泥在哪里、正在做什么、主要物件是什么、信息如何流动}
+Elementos: {1–4 objetos no máximo}
 
-Suggested elements:
-{元素1} / {元素2} / {元素3}
+Rótulos manuscritos curtos ({idioma: pt-BR ou chinês}), no máximo 5:
+{rótulo1} / {rótulo2} / {rótulo3} / {rótulo4} / {rótulo5 opcional}
 
-Chinese handwritten labels:
-{标注词1} / {标注词2} / {标注词3} / {标注词4}
+Cores: preto ou deep grape-purple no traço; use purple-pink only for the selected brain-bag and sunglasses, gray-purple for the creator outfit, orange only for flow/arrows or the four badge fish, red only for alerts/problems/results, and blue only for secondary notes or the badge star.
 
-Color use:
-Black for main line art. Orange for the main path. Red for warnings or results. Blue for secondary notes. Purple only for the fixed Huayexini IP details.
-
-Constraints:
-One image explains one core structure. Keep the main subject around 40%-60% of the canvas and preserve at least 35% blank white space. Do not write a type label in the top-left corner. Do not copy old example compositions. Do not use the original Xiaohei character. Do not change the selected double-knot brainstorm-bag variant, gray suit, badge, sunglasses, bubble gum, or cold-cute identity. No watermark.
+Restrições: um único núcleo estrutural; sujeito ~40–60% do quadro; ≥35% vazio; sem título no canto; sem copiar composições de exemplos antigos; inventar metáfora fresca para este artigo; claro mas não didático; estranho mas limpo.
 ```
 
-## 明确教程流程模板
-
-只有用户明确要求安装流程、操作步骤、教程路径或四步流程图时使用：
+### Versão curta (quando o contexto já carrega o DNA)
 
 ```text
-Generate one standalone 16:9 horizontal Chinese hand-drawn tutorial illustration.
-
-Use the original Xiaohei-style visual method: pure white background, thin black hand-drawn linework, generous whitespace, sparse orange arrows and red/blue handwritten notes. This is a hand-drawn explanation image, not a corporate PPT and not a real software screenshot.
-
-Use one fixed Huayexini IP variant in every panel: cold-faced cute Q-version creator, short straight black bob hair, purple oval sunglasses, pink bubble gum, gray creator suit, deep grape-purple sash, and black-cat blue-star exactly-four-orange-fish badge. Choose either `backpack` — the bag behind the shoulders — or `head-worn` — the bag directly on top of the head like a cap/hood with exactly two symmetrical knots. Never switch or combine variants across panels.
-
-Create {3-5} clearly numbered panels connected by simple hand-drawn arrows. Each panel shows one action only. Use simplified browser or app windows only when they clarify the requested operation. Keep visible labels short and render only the exact text supplied below.
-
-Topic:
-{教程主题}
-
-Steps and exact labels:
-1. {步骤1}
-2. {步骤2}
-3. {步骤3}
-4. {步骤4}
-
-Required text only:
-{用户提供的准确标题和短标签}
-
-No extra steps, no invented credentials, no real API keys, no long paragraphs, no unrelated logos, no watermark.
+16:9 pure white hand-drawn absurd product sketch. Black wobbly line art, lots of empty space, sparse short handwritten labels in {pt-BR|Chinese} with red/orange/blue only. 花野稀泥 (cold-faced cute Q-version creator with short black Bob hair, the selected backpack or head-worn brain-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, and black-cat + blue-star + exactly-four-orange-fish badge) must do the core action: {ação}. Scene: {composição em 1–2 frases}. Labels: {lista curta}. No PPT, no cute mascot, no top-left title, no busy diagram.
 ```
 
-## 局部编辑模板
+## Parâmetros da ferramenta
 
 ```text
-Edit only {明确区域}: change it to {明确变化}.
-Preserve the character's face, bob hair, selected `backpack` or `head-worn` translucent purple-pink brainstorm bag, exactly two knots, gray suit, sash, badge, pose, composition, background, color balance, labels, and hand-drawn line quality.
-Do not add objects, change the aspect ratio, switch the selected bag variant, recolor the suit, or generate new text or a watermark.
+image_gen:
+  prompt: <template preenchido>
+  aspect_ratio: "16:9"
 ```
 
-## 负面约束
+## Variant lock
+
+In every prompt, explicitly select either `backpack` or `head-worn` from `references/huayexini-variants.md`; never mix them.
+
+## Edição (`image_edit`)
+
+### Remover título no canto
 
 ```text
-Do not use the original Xiaohei black creature. Do not change the Huayexini face, bob hair, selected brainstorm-bag variant, two-knot count, sunglasses, bubble gum, gray suit, sash, or black-cat blue-star four-orange-fish badge. Do not combine the backpack and head-worn variants. No extra fish, extra animals, weapons, random colors, realistic portrait, glossy 3D, corporate PPT, dense flowchart, long text, invented credentials, logo, or watermark.
+Edit only: remove the handwritten title "{texto}" and its underline from the top-left. Fill with clean pure white matching the paper. Keep everything else identical — characters, labels, paths, line style, composition, quality. Do not add any new text or objects.
 ```
+
+```text
+image_edit:
+  prompt: <acima>
+  image: ["<caminho absoluto da imagem ou token [Image #N]>"]
+```
+
+### Reforçar protagonismo do 花野稀泥
+
+```text
+Regenerate with the same core meaning and sparse layout, but make 花野稀泥 with the selected backpack or head-worn brain-bag variant central to the conceptual action — the character must perform the strange work that explains the idea, not stand beside a diagram. Keep pure white background, black hand-drawn lines, minimal short labels, not cute.
+```
+
+### Calibrar estilo com exemplo (só se pedido)
+
+```text
+New illustration for theme "{tema}", invent a fresh metaphor (do not copy the reference composition or objects). Match only the style of the reference: pure white paper, sparse black wobbly line density, limited red/orange/blue handwritten labels, deadpan 花野稀泥 participation. 16:9 article body illustration.
+```
+
+Use a referência em `image` (ex.: um PNG em `assets/examples/`).
+
+### Reduzir densidade / “cheiro de PPT”
+
+```text
+Simplify: keep the same core idea and 花野稀泥 as action subject. Remove extra nodes, boxes, and arrows. No title, no grid, no formal flowchart look. More empty white space, fewer short labels, hand-drawn product sketch only.
+```
+
+## Idioma
+
+- Artigo em **português** → rótulos em **português** curto.
+- Artigo em **chinês** → rótulos em **chinês** curto.
+- O bloco “Visual DNA” em inglês pode permanecer: estabiliza o render no Imagine.
