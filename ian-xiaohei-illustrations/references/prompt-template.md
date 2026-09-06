@@ -1,52 +1,81 @@
-# 花野稀泥 Prompt 模板
+# 花野稀泥生图提示词模板
 
-## 基础角色块
+每张图单独生成。先锁定角色和视觉 DNA，再只替换当前主题、动作、道具或情绪中的一到两个变量。
 
-每次生成都保留以下内容：
-
-```text
-花野稀泥官方 IP：冷脸萌的 Q 版创意实验者。短直黑色 Bob 发，半透明紫粉色塑料脑洞袋，左右两个对称扎结，紫色椭圆墨镜，粉色泡泡糖，灰紫色剪裁感创作者套装，深葡萄紫腰封，宽腿短裤和深色鞋。角色胸口画面右侧佩戴黑猫四鱼蓝色星形徽章：黑色小猫头像、亮蓝色异形星形底、恰好四条橙色小鱼。表情保持半垂眼、微抿嘴、淡淡腮红的冷脸萌气质。
-```
-
-## 基础模板
+## 通用正文配图模板
 
 ```text
-使用花野稀泥官方 IP 角色。
+Generate one standalone 16:9 horizontal Chinese article illustration.
 
-角色固定设定：
-{基础角色块}
+Visual DNA:
+Pure white background. Minimalist black or deep navy hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red/orange/blue handwritten Chinese annotations. Clean absurd low-tech product-sketch feeling. No gradients, no heavy shadows, no paper texture, no glossy UI, no commercial vector style, no PPT infographic look.
 
-本次主题：{主题}
-本次动作：{动作}
-本次场景：{场景}
-本次道具：{道具}
-本次情绪：{冷静/好奇/轻微惊讶/克制开心/疲惫无语/轻微得意}
-画面用途：{小红书封面/漫画/拼豆/贴纸/头像/视频贴图}
-画幅：{1:1/4:5/9:16/16:9}
+Recurring IP character required:
+花野稀泥，a cold-faced cute Q-version creative experimenter with short straight black bob hair, purple oval sunglasses, pink bubble gum, a translucent purple-pink brainstorm bag worn directly on top of the head like a soft hood/cap, exactly two symmetrical tied knots at the left and right, gray tailored creator suit, deep grape-purple sash, wide-leg shorts, dark shoes, and a chest badge made of a black cat, a bright blue irregular star shape, and exactly four orange fish. The head-worn bag is not a backpack or shoulder bag. The gray suit must stay gray. 花野稀泥 must perform the core action, not decorate the scene. Keep the face deadpan and calm, not a big smile.
 
-视觉风格：手绘彩铅、蜡笔和马克笔混合质感，深葡萄紫线稿，紫灰主色，干净留白，拼贴与实验杂志感，主体轮廓清晰。
+Theme:
+{正文配图主题}
 
-只改变本次主题、动作、场景、道具和情绪；保持角色外貌、脑洞袋、服装、徽章、主色和冷脸萌基底不变。
+Structure type:
+{Workflow / 系统局部 / 前后对比 / 角色状态 / 概念隐喻 / 方法分层 / 地图路线 / 小漫画分镜}
+
+Core idea:
+{这张图要表达的核心意思}
+
+Composition:
+{花野稀泥在哪里、正在做什么、主要物件是什么、信息如何流动}
+
+Suggested elements:
+{元素1} / {元素2} / {元素3}
+
+Chinese handwritten labels:
+{标注词1} / {标注词2} / {标注词3} / {标注词4}
+
+Color use:
+Black for main line art. Orange for the main path. Red for warnings or results. Blue for secondary notes. Purple only for the fixed Huayexini IP details.
+
+Constraints:
+One image explains one core structure. Keep the main subject around 40%-60% of the canvas and preserve at least 35% blank white space. Do not write a type label in the top-left corner. Do not copy old example compositions. Do not use the original Xiaohei character. Do not change the head-worn double-knot brainstorm bag, gray suit, badge, sunglasses, bubble gum, or cold-cute identity. No watermark.
 ```
 
-## 负面 Prompt
+## 明确教程流程模板
+
+只有用户明确要求安装流程、操作步骤、教程路径或四步流程图时使用：
 
 ```text
-不要改变角色脸型、发型、脑洞袋、扎结数量、墨镜、泡泡糖、服装、腰封和胸口徽章；不要三个点、不要枪形徽章、不要额外鱼、不要额外动物、不要随机换色、不要写实人像、不要普通美少女、不要过度甜美、不要夸张大笑、不要复杂背景、不要长文字、不要 Logo、不要水印、不要多余角色。
+Generate one standalone 16:9 horizontal Chinese hand-drawn tutorial illustration.
+
+Use the original Xiaohei-style visual method: pure white background, thin black hand-drawn linework, generous whitespace, sparse orange arrows and red/blue handwritten notes. This is a hand-drawn explanation image, not a corporate PPT and not a real software screenshot.
+
+Use the fixed Huayexini IP in every panel: cold-faced cute Q-version creator, short straight black bob hair, purple oval sunglasses, pink bubble gum, translucent purple-pink brainstorm bag worn directly on the head like a cap/hood, exactly two symmetrical knots, gray creator suit, deep grape-purple sash, and black-cat blue-star exactly-four-orange-fish badge. Never place the bag behind the shoulders or turn it into a backpack.
+
+Create {3-5} clearly numbered panels connected by simple hand-drawn arrows. Each panel shows one action only. Use simplified browser or app windows only when they clarify the requested operation. Keep visible labels short and render only the exact text supplied below.
+
+Topic:
+{教程主题}
+
+Steps and exact labels:
+1. {步骤1}
+2. {步骤2}
+3. {步骤3}
+4. {步骤4}
+
+Required text only:
+{用户提供的准确标题和短标签}
+
+No extra steps, no invented credentials, no real API keys, no long paragraphs, no unrelated logos, no watermark.
 ```
 
-## 精确局部编辑模板
+## 局部编辑模板
 
 ```text
-只编辑{明确区域}，把它改为{明确变化}。
-保持角色的脸、发型、脑洞袋、服装、徽章、姿势、构图、背景、配色和手绘质感完全不变。
-不要新增其他物件，不要改变画面比例，不要生成文字或水印。
+Edit only {明确区域}: change it to {明确变化}.
+Preserve the character's face, bob hair, head-worn translucent purple-pink brainstorm bag, exactly two knots, gray suit, sash, badge, pose, composition, background, color balance, labels, and hand-drawn line quality.
+Do not add objects, change the aspect ratio, move the bag to the shoulders, recolor the suit, or generate new text or a watermark.
 ```
 
-## 稳定性原则
+## 负面约束
 
-1. 一次只改变一到两个变量。
-2. 多张图始终使用同一段基础角色块。
-3. 先生成无文字画面，再在排版软件里添加标题。
-4. 需要保持徽章一致时，使用 `assets/black-cat-four-fish-badge.png` 作为参考图。
-5. 需要保持角色一致时，使用 `assets/huayexini-front-final.png` 作为参考图。
+```text
+Do not use the original Xiaohei black creature. Do not change the Huayexini face, bob hair, head-worn brainstorm bag, two-knot count, sunglasses, bubble gum, gray suit, sash, or black-cat blue-star four-orange-fish badge. No backpack, shoulder bag, hanging bag, extra fish, extra animals, weapons, random colors, realistic portrait, glossy 3D, corporate PPT, dense flowchart, long text, invented credentials, logo, or watermark.
+```
