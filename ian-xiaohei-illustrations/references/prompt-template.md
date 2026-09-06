@@ -11,7 +11,12 @@ Visual DNA:
 Pure white background. Minimalist black or deep navy hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red/orange/blue handwritten Chinese annotations. Clean absurd low-tech product-sketch feeling. No gradients, no heavy shadows, no paper texture, no glossy UI, no commercial vector style, no PPT infographic look.
 
 Recurring IP character required:
-花野稀泥，a cold-faced cute Q-version creative experimenter with short straight black bob hair, purple oval sunglasses, pink bubble gum, a translucent purple-pink brainstorm bag worn directly on top of the head like a soft hood/cap, exactly two symmetrical tied knots at the left and right, gray tailored creator suit, deep grape-purple sash, wide-leg shorts, dark shoes, and a chest badge made of a black cat, a bright blue irregular star shape, and exactly four orange fish. The head-worn bag is not a backpack or shoulder bag. The gray suit must stay gray. 花野稀泥 must perform the core action, not decorate the scene. Keep the face deadpan and calm, not a big smile.
+花野稀泥，a cold-faced cute Q-version creative experimenter with short straight black bob hair, purple oval sunglasses, pink bubble gum, a translucent purple-pink brainstorm bag, gray tailored creator suit, deep grape-purple sash, wide-leg shorts, dark shoes, and a chest badge made of a black cat, a bright blue irregular star shape, and exactly four orange fish. The gray suit must stay gray. 花野稀泥 must perform the core action, not decorate the scene. Keep the face deadpan and calm, not a big smile.
+
+Appearance variant — choose exactly one:
+1. `backpack`: the translucent purple-pink bag is worn behind the shoulders, with exactly two symmetrical purple knots; the top of the head remains uncovered.
+2. `head-worn`: the translucent purple-pink bag is worn directly on top of the head like a hood/cap, with exactly two symmetrical knots; it is not a backpack or shoulder bag.
+Keep the chosen variant unchanged across a series. Never combine both bags or invent a third placement.
 
 Theme:
 {正文配图主题}
@@ -35,7 +40,7 @@ Color use:
 Black for main line art. Orange for the main path. Red for warnings or results. Blue for secondary notes. Purple only for the fixed Huayexini IP details.
 
 Constraints:
-One image explains one core structure. Keep the main subject around 40%-60% of the canvas and preserve at least 35% blank white space. Do not write a type label in the top-left corner. Do not copy old example compositions. Do not use the original Xiaohei character. Do not change the head-worn double-knot brainstorm bag, gray suit, badge, sunglasses, bubble gum, or cold-cute identity. No watermark.
+One image explains one core structure. Keep the main subject around 40%-60% of the canvas and preserve at least 35% blank white space. Do not write a type label in the top-left corner. Do not copy old example compositions. Do not use the original Xiaohei character. Do not change the selected double-knot brainstorm-bag variant, gray suit, badge, sunglasses, bubble gum, or cold-cute identity. No watermark.
 ```
 
 ## 明确教程流程模板
@@ -47,7 +52,7 @@ Generate one standalone 16:9 horizontal Chinese hand-drawn tutorial illustration
 
 Use the original Xiaohei-style visual method: pure white background, thin black hand-drawn linework, generous whitespace, sparse orange arrows and red/blue handwritten notes. This is a hand-drawn explanation image, not a corporate PPT and not a real software screenshot.
 
-Use the fixed Huayexini IP in every panel: cold-faced cute Q-version creator, short straight black bob hair, purple oval sunglasses, pink bubble gum, translucent purple-pink brainstorm bag worn directly on the head like a cap/hood, exactly two symmetrical knots, gray creator suit, deep grape-purple sash, and black-cat blue-star exactly-four-orange-fish badge. Never place the bag behind the shoulders or turn it into a backpack.
+Use one fixed Huayexini IP variant in every panel: cold-faced cute Q-version creator, short straight black bob hair, purple oval sunglasses, pink bubble gum, gray creator suit, deep grape-purple sash, and black-cat blue-star exactly-four-orange-fish badge. Choose either `backpack` — the bag behind the shoulders — or `head-worn` — the bag directly on top of the head like a cap/hood with exactly two symmetrical knots. Never switch or combine variants across panels.
 
 Create {3-5} clearly numbered panels connected by simple hand-drawn arrows. Each panel shows one action only. Use simplified browser or app windows only when they clarify the requested operation. Keep visible labels short and render only the exact text supplied below.
 
@@ -70,12 +75,12 @@ No extra steps, no invented credentials, no real API keys, no long paragraphs, n
 
 ```text
 Edit only {明确区域}: change it to {明确变化}.
-Preserve the character's face, bob hair, head-worn translucent purple-pink brainstorm bag, exactly two knots, gray suit, sash, badge, pose, composition, background, color balance, labels, and hand-drawn line quality.
-Do not add objects, change the aspect ratio, move the bag to the shoulders, recolor the suit, or generate new text or a watermark.
+Preserve the character's face, bob hair, selected `backpack` or `head-worn` translucent purple-pink brainstorm bag, exactly two knots, gray suit, sash, badge, pose, composition, background, color balance, labels, and hand-drawn line quality.
+Do not add objects, change the aspect ratio, switch the selected bag variant, recolor the suit, or generate new text or a watermark.
 ```
 
 ## 负面约束
 
 ```text
-Do not use the original Xiaohei black creature. Do not change the Huayexini face, bob hair, head-worn brainstorm bag, two-knot count, sunglasses, bubble gum, gray suit, sash, or black-cat blue-star four-orange-fish badge. No backpack, shoulder bag, hanging bag, extra fish, extra animals, weapons, random colors, realistic portrait, glossy 3D, corporate PPT, dense flowchart, long text, invented credentials, logo, or watermark.
+Do not use the original Xiaohei black creature. Do not change the Huayexini face, bob hair, selected brainstorm-bag variant, two-knot count, sunglasses, bubble gum, gray suit, sash, or black-cat blue-star four-orange-fish badge. Do not combine the backpack and head-worn variants. No extra fish, extra animals, weapons, random colors, realistic portrait, glossy 3D, corporate PPT, dense flowchart, long text, invented credentials, logo, or watermark.
 ```
