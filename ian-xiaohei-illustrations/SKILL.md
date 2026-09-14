@@ -101,8 +101,8 @@ Leia **só o necessário** do modo ativo:
 
 ## IP identity lock — exactly two variants
 
-The output character is always 花野稀泥. Before generating, select exactly one brain-bag variant and keep it fixed across the image set:
-- `backpack`: the translucent purple-pink double-knot brain-bag is worn on the back; the short black Bob hair remains visible.
+The output character is always 花野稀泥. Before generating, select exactly one idea-bag variant and keep it fixed across the image set:
+- `backpack`: the translucent purple-pink double-knot idea-bag is worn on the back; the short black Bob hair remains visible.
 - `head-worn`: the same bag is worn directly on top of the head; it is not a backpack, shoulder bag, hanging bag, or hand-held bag.
 - Both variants share the gray/gray-purple creator outfit, purple oval sunglasses, pink bubble gum, deadpan-cute expression, and the black-cat + blue star + exactly four orange fish badge.
 - Never combine the two variants in one image or change the selected variant without the user explicitly requesting a switch.
@@ -200,3 +200,22 @@ Híbrido: capa PPT + 3 illustrations de estrutura + 1 scene de manutenção.
 Antes: modo escolhido + shot list / blueprint curto.  
 Depois: contagem, uso, caminhos, o que é estável vs opcional.  
 Sem tratado longo de teoria — deixe a imagem falar.
+
+## 最终 IP 参考锁（v1.1，2026-09-14，强制）
+
+本仓库新增的两张用户确认图是花野稀泥头部身份的唯一权威参考。生成图片时必须使用与用户选择相匹配的那一张；原有完整角色图只能作为构图、服装和动作的辅助参考，不能覆盖这两张头部标准。
+
+| 用户可见选择 | 内部变体 | 权威头部参考 | 固定含义 |
+| --- | --- | --- | --- |
+| 无头套背袋版（也可称袋子版） | backpack | assets/standard-sheet/huayexini-backpack-no-headwear-reference.png | 黑色短直 Bob、齐刘海；不戴头套；透明紫粉双结袋背在身后，袋内基本为空 |
+| 有头套版 | head-worn | assets/standard-sheet/huayexini-head-worn-reference.png | 同一黑色短直 Bob、齐刘海；透明紫粉双结袋直接戴在头上；袋内只能出现抽象奇思妙想符号，如灯泡、星星、纸条 |
+
+生成前的确认门：
+
+- 用户已明确说“无头套背袋版/袋子版”或“有头套版”时，直接使用对应变体；如果明确要求两版，则分别生成并且每一组内部固定一版。
+- 用户只说“用我的 IP”“生成插画”或其他未明确变体的请求时，必须先问：**“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”** 在得到选择前不要生成。
+- 不得根据构图、场景、尺寸或模型习惯自行猜测变体；不得把两版混在同一角色或同一组图里。
+- 两版都固定：黑色短直 Bob 齐刘海、紫色椭圆墨镜、粉色泡泡糖、灰色宽松西装短裤套装、白色衬衣与领带、腰带，以及黑猫 + 蓝色星形 + 恰好四条橙色鱼徽章。
+- 严禁脑组织、肠子、写实器官、身体内部剖面、血腥或其他生物器官隐喻。头套袋中的内容只能是抽象想法符号；背袋版保持基本为空。
+- 每次 imagegen/image_edit 调用前，先在内部记录 selected_variant 与对应参考路径；整组图不得中途切换。
+

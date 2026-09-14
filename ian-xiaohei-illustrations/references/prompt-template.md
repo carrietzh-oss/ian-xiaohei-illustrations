@@ -21,7 +21,7 @@ Visual DNA:
 Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red, orange, and blue handwritten short annotations. Clean absurd product-sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI, no top-left title banner.
 
 Personagem recorrente (obrigatório):
-花野稀泥 / 花野稀泥 — cold-faced cute Q-version creative experimenter with short black Bob hair, the selected translucent purple-pink double-knot brain-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, deep grape-purple waist belt, and the black-cat + blue star + exactly four orange fish badge. 花野稀泥 performs the core conceptual action; the character is not a corner decoration. Serious, slightly bizarre, not generic cute.
+花野稀泥 / 花野稀泥 — cold-faced cute Q-version creative experimenter with short black Bob hair, the selected translucent purple-pink double-knot idea-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, deep grape-purple waist belt, and the black-cat + blue star + exactly four orange fish badge. 花野稀泥 performs the core conceptual action; the character is not a corner decoration. Serious, slightly bizarre, not generic cute.
 
 Tema: {tema da ilustração}
 
@@ -36,7 +36,7 @@ Elementos: {1–4 objetos no máximo}
 Rótulos manuscritos curtos ({idioma: pt-BR ou chinês}), no máximo 5:
 {rótulo1} / {rótulo2} / {rótulo3} / {rótulo4} / {rótulo5 opcional}
 
-Cores: preto ou deep grape-purple no traço; use purple-pink only for the selected brain-bag and sunglasses, gray-purple for the creator outfit, orange only for flow/arrows or the four badge fish, red only for alerts/problems/results, and blue only for secondary notes or the badge star.
+Cores: preto ou deep grape-purple no traço; use purple-pink only for the selected idea-bag and sunglasses, gray-purple for the creator outfit, orange only for flow/arrows or the four badge fish, red only for alerts/problems/results, and blue only for secondary notes or the badge star.
 
 Restrições: um único núcleo estrutural; sujeito ~40–60% do quadro; ≥35% vazio; sem título no canto; sem copiar composições de exemplos antigos; inventar metáfora fresca para este artigo; claro mas não didático; estranho mas limpo.
 ```
@@ -44,7 +44,7 @@ Restrições: um único núcleo estrutural; sujeito ~40–60% do quadro; ≥35% 
 ### Versão curta (quando o contexto já carrega o DNA)
 
 ```text
-16:9 pure white hand-drawn absurd product sketch. Black wobbly line art, lots of empty space, sparse short handwritten labels in {pt-BR|Chinese} with red/orange/blue only. 花野稀泥 (cold-faced cute Q-version creator with short black Bob hair, the selected backpack or head-worn brain-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, and black-cat + blue-star + exactly-four-orange-fish badge) must do the core action: {ação}. Scene: {composição em 1–2 frases}. Labels: {lista curta}. No PPT, no cute mascot, no top-left title, no busy diagram.
+16:9 pure white hand-drawn absurd product sketch. Black wobbly line art, lots of empty space, sparse short handwritten labels in {pt-BR|Chinese} with red/orange/blue only. 花野稀泥 (cold-faced cute Q-version creator with short black Bob hair, the selected backpack or head-worn idea-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, and black-cat + blue-star + exactly-four-orange-fish badge) must do the core action: {ação}. Scene: {composição em 1–2 frases}. Labels: {lista curta}. No PPT, no cute mascot, no top-left title, no busy diagram.
 ```
 
 ## Parâmetros da ferramenta
@@ -76,7 +76,7 @@ image_edit:
 ### Reforçar protagonismo do 花野稀泥
 
 ```text
-Regenerate with the same core meaning and sparse layout, but make 花野稀泥 with the selected backpack or head-worn brain-bag variant central to the conceptual action — the character must perform the strange work that explains the idea, not stand beside a diagram. Keep pure white background, black hand-drawn lines, minimal short labels, not cute.
+Regenerate with the same core meaning and sparse layout, but make 花野稀泥 with the selected backpack or head-worn idea-bag variant central to the conceptual action — the character must perform the strange work that explains the idea, not stand beside a diagram. Keep pure white background, black hand-drawn lines, minimal short labels, not cute.
 ```
 
 ### Calibrar estilo com exemplo (só se pedido)
@@ -98,3 +98,16 @@ Simplify: keep the same core idea and 花野稀泥 as action subject. Remove ext
 - Artigo em **português** → rótulos em **português** curto.
 - Artigo em **chinês** → rótulos em **chinês** curto.
 - O bloco “Visual DNA” em inglês pode permanecer: estabiliza o render no Imagine.
+
+## 最终头部参考选择门（强制）
+
+在生成前先收集：
+
+- selected_variant：只能是 backpack（无头套背袋版/袋子版）或 head-worn（有头套版）。
+- reference_head：必须是对应的最终参考图：
+  - backpack → assets/standard-sheet/huayexini-backpack-no-headwear-reference.png
+  - head-worn → assets/standard-sheet/huayexini-head-worn-reference.png
+
+如果用户没有给出 selected_variant，先询问“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”，暂停生成。用户明确要求两版时，分别渲染两个固定组，不能在同一组中切换。
+
+在 imagegen 或 image_edit 的提示词中明确写出：使用 reference_head 锁定黑色短直 Bob 齐刘海、紫色椭圆墨镜、粉色泡泡糖和对应袋子佩戴方式；保留灰色宽松西装短裤、白色衬衣与领带、腰带和黑猫四鱼徽章；禁止脑组织、肠子、写实器官、身体内部结构、血腥和器官隐喻。

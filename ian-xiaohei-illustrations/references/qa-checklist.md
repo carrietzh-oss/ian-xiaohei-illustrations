@@ -47,3 +47,15 @@ Ruim: parece página de tutorial em vez de rascunho absurdo de produto no papel 
 - Listar caminhos retornados pelo Grok (`images/…` ou path absoluto).  
 - Se o projeto pedir: copiar para `assets/<slug>-illustrations/01-….png`.  
 - Não sobrescrever assets sem confirmação.
+
+## 最终双形象一致性 QA（v1.1）
+
+每张图、每组图输出前必须逐项确认：
+
+- [ ] 已有明确的 selected_variant；未指定时已经先询问用户。
+- [ ] 头部严格匹配对应最终参考图：黑色短直 Bob、齐刘海、紫色椭圆墨镜、粉色泡泡糖。
+- [ ] backpack 版没有头套，透明紫粉双结袋只在背部且基本为空。
+- [ ] head-worn 版的袋子直接在头顶，恰好两个对称结；袋内只有灯泡、星星、纸条等抽象想法符号。
+- [ ] 两版均保持灰色宽松西装短裤、白色衬衣与领带、腰带，以及黑猫 + 蓝星 + 恰好四条橙鱼徽章。
+- [ ] 没有脑组织、肠子、写实器官、身体内部剖面、血腥或其他器官元素。
+- [ ] 同一组图没有混用两种变体；没有因为场景、姿势、画幅或文字生成第三种形态。
