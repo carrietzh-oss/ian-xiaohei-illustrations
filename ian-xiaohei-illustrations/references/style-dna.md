@@ -47,6 +47,6 @@ Não queremos: fofo, infantil, lotado, rígido.
 Modelos de imagem **erram texto** com facilidade. Esta skill depende de **poucos rótulos curtos** e metáfora visual — se o conteúdo exigir números, tabelas ou labels exatos, avise o usuário ou reduza o texto na imagem em vez de lotar o prompt.
 
 
-## IP variant exception
+## IP variant lock
 
-The only character variation is the selected `backpack` or `head-worn` brain-bag placement described in `references/huayexini-variants.md`.
+The only character variation is the user-selected `backpack` (A, no headwear; basically empty back bag) or `head-worn` (B, bag on head; abstract idea symbols only) described in `references/huayexini-variants.md`. If the user has not selected A or B, ask before generating; never infer the variant from the scene.

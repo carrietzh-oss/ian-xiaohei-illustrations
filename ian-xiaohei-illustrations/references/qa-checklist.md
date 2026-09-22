@@ -24,7 +24,7 @@
 | Elementos/setas demais | regenerar com menos nós |
 | Texto longo ou ilegível | regenerar com ≤3–5 rótulos curtos |
 | Fundo sujo / textura | regenerar reforçando pure white |
-| Parecido com `assets/examples/` | regenerar trocando objeto + ação |
+| Copiou uma imagem histórica de personagem | regenerar usando somente a referência A/B e trocar objeto + ação |
 | Precisa inspecionar texto/estilo | `read_file` na imagem gerada |
 
 ## Como iterar
@@ -48,7 +48,7 @@ Ruim: parece página de tutorial em vez de rascunho absurdo de produto no papel 
 - Se o projeto pedir: copiar para `assets/<slug>-illustrations/01-….png`.  
 - Não sobrescrever assets sem confirmação.
 
-## 最终双形象一致性 QA（v1.1）
+## 最终双形象一致性 QA（v2.0）
 
 每张图、每组图输出前必须逐项确认：
 
@@ -56,6 +56,8 @@ Ruim: parece página de tutorial em vez de rascunho absurdo de produto no papel 
 - [ ] 头部严格匹配对应最终参考图：黑色短直 Bob、齐刘海、紫色椭圆墨镜、粉色泡泡糖。
 - [ ] backpack 版没有头套，透明紫粉双结袋只在背部且基本为空。
 - [ ] head-worn 版的袋子直接在头顶，恰好两个对称结；袋内只有灯泡、星星、纸条等抽象想法符号。
-- [ ] 两版均保持灰色宽松西装短裤、白色衬衣与领带、腰带，以及黑猫 + 蓝星 + 恰好四条橙鱼徽章。
+- [ ] 两版均保持灰色宽松西装短裤、白色衬衣、领带、腰带、紫色墨镜、粉色泡泡糖、紫白黑鞋子，以及黑猫 + 蓝星 + 恰好四条橙鱼徽章。
 - [ ] 没有脑组织、肠子、写实器官、身体内部剖面、血腥或其他器官元素。
 - [ ] 同一组图没有混用两种变体；没有因为场景、姿势、画幅或文字生成第三种形态。
+- [ ] 没有灰发、耳饰、长裤、不同鞋子、额外动物、额外鱼、武器、Logo 或水印。
+- [ ] 未指定 A/B 时，已在生成前询问用户，没有按场景自动猜测。

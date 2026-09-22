@@ -58,7 +58,7 @@ Puxar, carregar, enfiar, pescar, pressionar, pesar, costurar, cortar, apertar, g
 
 ## Anti-cópia
 
-Não abra nem recrie `assets/examples/` por padrão — só calibração de densidade de linha, vazio, cor e temperamento.
+Não abra nem recrie imagens históricas de personagens. A identidade só pode vir das duas imagens confirmadas em `assets/standard-sheet/`; o restante da composição deve ser novo.
 
 Sem pedido explícito de “copie esta composição”, **não** reutilize:
 
@@ -77,4 +77,4 @@ Temas parecidos → **outra** metáfora. Handoff pode ser cauda do conteúdo na 
 
 ## IP variant continuity
 
-Choose one of the two 花野稀泥 variants before composing: `backpack` for movement/full-body scenes or `head-worn` for desk/tutorial/close-up scenes. Do not mix or silently switch variants.
+Ask the user to choose one of the two 花野稀泥 variants before composing: A `backpack` or B `head-worn`. Do not infer from movement, desk, tutorial, aspect ratio or close-up; do not mix or silently switch.

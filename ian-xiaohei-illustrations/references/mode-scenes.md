@@ -64,7 +64,7 @@ Objetivo: o leitor vê um **mini-set real** (estúdio branco), depois em ~1s pen
 
 ```text
 16:9 Chinese/Portuguese article illustration, white studio #FFFFFF, real physical object mini-scene (product photo feel of one prop), not hand-drawn whiteboard diagram, not PPT.
-花野稀泥：冷脸萌 Q 版创意实验者，短直黑 Bob 发，佩戴所选紫粉色双结脑洞袋变体、灰紫创作者套装、紫色椭圆墨镜、粉色泡泡糖和黑猫四鱼徽章；必须与真实物件一起执行核心物理动作。
+花野稀泥：保持用户确认图比例的冷脸萌创意实验者，不额外 Q 版化；短直黑 Bob 发，使用用户明确选择的 A 无头套背袋版或 B 有头套版，穿灰色西装短裤、白衬衣、领带和腰带，使用紫色椭圆墨镜、粉色泡泡糖、紫白黑鞋子和黑猫四鱼徽章；必须与真实物件一起执行核心物理动作。A 袋内基本为空，B 袋内只能有抽象奇思妙想符号。
 Scene: {objeto real} + {ação física clara em uma frase}.
 Sparse 2-4 short handwritten labels in {pt-BR|Chinese}: {rótulos}.
 Light accent dots blue/pink/yellow/green/red only for rhythm. Lots of empty white space. No screenshots, no UI, no logos, no flowchart arrows, no cute mascot, no dense text.
@@ -101,4 +101,4 @@ Ferramentas Grok: `image_gen`, `image_edit` (remover título, reforçar ação),
 
 ## Variant lock
 
-Read `references/huayexini-variants.md`, select `backpack` or `head-worn`, and keep that single variant throughout the scene or long-scroll.
+Read `references/huayexini-variants.md`, ask the user to select A `backpack` or B `head-worn` when unspecified, and keep that single variant throughout the scene or long-scroll.

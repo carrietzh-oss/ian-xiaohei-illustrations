@@ -1,113 +1,52 @@
-# Template de prompt — Grok `image_gen` / `image_edit`
+# Prompt 模板 — Grok image_gen / image_edit
 
-## Regras de montagem (Grok Imagine)
+## 组装规则
 
-- **Uma cena por chamada** de `image_gen`.
-- Sempre passe **`aspect_ratio: "16:9"`** em novas gerações.
-- Escreva o prompt em **prosa natural** (português e/ou inglês). O DNA visual em inglês abaixo costuma estabilizar o estilo; tema e composição podem ir em PT-BR.
-- Front-load: sujeito (花野稀泥 + ação) → metáfora → estilo → composição → rótulos.
-- Prefira dizer o que **deve existir** (descrições positivas). Mantenha a lista de exclusões do DNA porque o estilo desta skill depende de “não ser PPT”.
-- Rótulos: **curtos**. Modelo de imagem erra com texto longo — menos é mais.
-- Várias imagens do artigo: várias chamadas; prompts distintos.
+- 一次 image_gen 只生成一个核心画面；新图默认 aspect_ratio: "16:9"，除非用户明确指定其他比例。
+- 先写人物与核心动作，再写隐喻、风格、构图和短标签。
+- 每组图先锁定 selected_variant；用户未指定 A/B 时先询问，不得自动选择。
+- 文字只使用少量中文短标签；不要在图中塞长段文字。
 
-## Template principal (`image_gen`)
+## 主模板
 
-Substitua as chaves `{…}`. Envie o bloco inteiro (ou uma prosa condensada equivalente) no campo `prompt`.
+~~~text
+{画幅} hand-drawn absurd article illustration, pure white background, black thin wobbly line art, generous empty space, restrained red/orange/blue accents, not PPT, not a formal infographic, not a commercial mascot poster.
 
-```text
-Ilustração horizontal 16:9 para corpo de artigo, rascunho de produto absurdo e limpo.
+Character lock: 花野稀泥, use exactly one user-confirmed variant: {A backpack / B head-worn}. Keep the user-confirmed proportions and silhouette: short straight black Bob hair with blunt bangs, purple oval sunglasses, pink bubble gum, loose gray suit shorts, white shirt, tie, waist belt, purple-white-black shoes, and the black cat + blue star + exactly four orange fish chest badge.
+A backpack: no headwear; the translucent purple-pink double-knot bag is worn on the back only and is basically empty.
+B head-worn: the translucent purple-pink double-knot bag is worn directly on the head; exactly two bows; its contents are only abstract idea symbols such as light bulbs, stars, paper notes and question marks.
 
-Visual DNA:
-Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red, orange, and blue handwritten short annotations. Clean absurd product-sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI, no top-left title banner.
+花野稀泥必须执行核心动作：{动作}。核心隐喻：{一句话}。构图：{人物、真实物件、空间关系和阅读方向}。对象：{1–4 个}。中文短标签：{不超过 5 个}。
 
-Personagem recorrente (obrigatório):
-花野稀泥 / 花野稀泥 — cold-faced cute Q-version creative experimenter with short black Bob hair, the selected translucent purple-pink double-knot idea-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, deep grape-purple waist belt, and the black-cat + blue star + exactly four orange fish badge. 花野稀泥 performs the core conceptual action; the character is not a corner decoration. Serious, slightly bizarre, not generic cute.
+Do not change the character identity, do not mix A and B, do not create a third variant. No gray hair, earrings, long trousers, different shoes, missing sunglasses, missing gum, missing badge, extra fish, extra animals, organs, brain tissue, intestines, gore, anatomical imagery, logos, watermarks, copied reference composition, or dense text.
+~~~
 
-Tema: {tema da ilustração}
+## 短模板
 
-Tipo de estrutura (não escrever o nome na imagem): {Workflow | recorte de sistema | antes e depois | estados | metáfora conceitual | camadas | mapa-rota | mini-quadrinhos}
+~~~text
+{画幅} pure-white hand-drawn absurd product sketch. 花野稀泥使用已选择的 {A 无头套背袋版 / B 有头套版}，保持用户确认图中的黑色短直 Bob 齐刘海、灰色西装短裤、白衬衣、领带、腰带、紫色椭圆墨镜、粉色泡泡糖、紫白黑鞋子和黑猫蓝星四橙鱼徽章；A 透明袋只在背后且基本为空，B 透明袋只在头顶且只含抽象奇思妙想符号。角色执行：{动作}。画面表达：{隐喻}。中文短标签：{标签}。不要第三种形象、器官元素、PPT、长文字或复制参考图构图。
+~~~
 
-Ideia central: {uma frase com o que o leitor deve entender}
+## 编辑模板
 
-Composição: {onde está o 花野稀泥, o que faz, objeto low-tech principal, como o fluxo se lê da esquerda para a direita ou no centro}
+~~~text
+只修正角色一致性，保持原画面的动作、构图、道具、文字和线稿不变。使用 {A / B} 对应的用户确认参考图锁定黑色短直 Bob 齐刘海、灰色西装短裤、白衬衣、领带、腰带、紫色墨镜、粉色泡泡糖、紫白黑鞋子和黑猫蓝星四橙鱼徽章。A 只能背基本为空的透明袋；B 只能戴含抽象奇思妙想符号的透明头套袋。不要混用变体、不要新增袋子、不要器官元素、不要改变画面主题。
+~~~
 
-Elementos: {1–4 objetos no máximo}
+## 参考图选择门（强制）
 
-Rótulos manuscritos curtos ({idioma: pt-BR ou chinês}), no máximo 5:
-{rótulo1} / {rótulo2} / {rótulo3} / {rótulo4} / {rótulo5 opcional}
+- A backpack：assets/standard-sheet/user-confirmed-a-no-headwear-backpack-reference.png
+- B head-worn：assets/standard-sheet/user-confirmed-b-head-worn-reference.png
+- 徽章局部：assets/standard-sheet/badge-black-cat-four-fish.png
 
-Cores: preto ou deep grape-purple no traço; use purple-pink only for the selected idea-bag and sunglasses, gray-purple for the creator outfit, orange only for flow/arrows or the four badge fish, red only for alerts/problems/results, and blue only for secondary notes or the badge star.
+参考图只锁定人物身份，不复制其中的页面、文字、UI、构图或动作。兼容旧模板的别名如果存在，只是 A/B 确认图副本；旧角色图、原小黑人物图和历史衍生图不得加载。
 
-Restrições: um único núcleo estrutural; sujeito ~40–60% do quadro; ≥35% vazio; sem título no canto; sem copiar composições de exemplos antigos; inventar metáfora fresca para este artigo; claro mas não didático; estranho mas limpo.
-```
+如果用户未选择变体，先问：**“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”** 用户要求两版时分组渲染，每组内部固定一个变体。
 
-### Versão curta (quando o contexto já carrega o DNA)
+## 输出参数
 
-```text
-16:9 pure white hand-drawn absurd product sketch. Black wobbly line art, lots of empty space, sparse short handwritten labels in {pt-BR|Chinese} with red/orange/blue only. 花野稀泥 (cold-faced cute Q-version creator with short black Bob hair, the selected backpack or head-worn idea-bag variant, purple oval sunglasses, pink bubble gum, gray-purple creator outfit, and black-cat + blue-star + exactly-four-orange-fish badge) must do the core action: {ação}. Scene: {composição em 1–2 frases}. Labels: {lista curta}. No PPT, no cute mascot, no top-left title, no busy diagram.
-```
-
-## Parâmetros da ferramenta
-
-```text
+~~~text
 image_gen:
-  prompt: <template preenchido>
-  aspect_ratio: "16:9"
-```
-
-## Variant lock
-
-In every prompt, explicitly select either `backpack` or `head-worn` from `references/huayexini-variants.md`; never mix them.
-
-## Edição (`image_edit`)
-
-### Remover título no canto
-
-```text
-Edit only: remove the handwritten title "{texto}" and its underline from the top-left. Fill with clean pure white matching the paper. Keep everything else identical — characters, labels, paths, line style, composition, quality. Do not add any new text or objects.
-```
-
-```text
-image_edit:
-  prompt: <acima>
-  image: ["<caminho absoluto da imagem ou token [Image #N]>"]
-```
-
-### Reforçar protagonismo do 花野稀泥
-
-```text
-Regenerate with the same core meaning and sparse layout, but make 花野稀泥 with the selected backpack or head-worn idea-bag variant central to the conceptual action — the character must perform the strange work that explains the idea, not stand beside a diagram. Keep pure white background, black hand-drawn lines, minimal short labels, not cute.
-```
-
-### Calibrar estilo com exemplo (só se pedido)
-
-```text
-New illustration for theme "{tema}", invent a fresh metaphor (do not copy the reference composition or objects). Match only the style of the reference: pure white paper, sparse black wobbly line density, limited red/orange/blue handwritten labels, deadpan 花野稀泥 participation. 16:9 article body illustration.
-```
-
-Use a referência em `image` (ex.: um PNG em `assets/examples/`).
-
-### Reduzir densidade / “cheiro de PPT”
-
-```text
-Simplify: keep the same core idea and 花野稀泥 as action subject. Remove extra nodes, boxes, and arrows. No title, no grid, no formal flowchart look. More empty white space, fewer short labels, hand-drawn product sketch only.
-```
-
-## Idioma
-
-- Artigo em **português** → rótulos em **português** curto.
-- Artigo em **chinês** → rótulos em **chinês** curto.
-- O bloco “Visual DNA” em inglês pode permanecer: estabiliza o render no Imagine.
-
-## 最终头部参考选择门（强制）
-
-在生成前先收集：
-
-- selected_variant：只能是 backpack（无头套背袋版/袋子版）或 head-worn（有头套版）。
-- reference_head：必须是对应的最终参考图：
-  - backpack → assets/standard-sheet/huayexini-backpack-no-headwear-reference.png
-  - head-worn → assets/standard-sheet/huayexini-head-worn-reference.png
-
-如果用户没有给出 selected_variant，先询问“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”，暂停生成。用户明确要求两版时，分别渲染两个固定组，不能在同一组中切换。
-
-在 imagegen 或 image_edit 的提示词中明确写出：使用 reference_head 锁定黑色短直 Bob 齐刘海、紫色椭圆墨镜、粉色泡泡糖和对应袋子佩戴方式；保留灰色宽松西装短裤、白色衬衣与领带、腰带和黑猫四鱼徽章；禁止脑组织、肠子、写实器官、身体内部结构、血腥和器官隐喻。
+  prompt: <填写后的模板>
+  aspect_ratio: <用户指定比例；未指定时 16:9>
+~~~

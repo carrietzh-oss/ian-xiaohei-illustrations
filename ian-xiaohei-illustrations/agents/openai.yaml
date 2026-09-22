@@ -2,6 +2,6 @@
 interface:
   display_name: "花野稀泥 Visual Hub"
   short_description: "完整保留小黑视觉工作流的花野稀泥双形象 Hub"
-  default_prompt: "使用 $huayexini-illustrations：保留小黑 Skill 的完整模式路由、认知锚点、隐喻、Scenes、Handdrawn PPT、Prompt 与 QA，只使用花野稀泥的无头套背袋版或有头套版；如果用户没有明确指定形象，生成前必须先询问选择 A 或 B；整组图固定同一变体并优先使用最终头部参考图。"
+  default_prompt: "使用 $huayexini-illustrations：保留小黑 Skill 的完整模式路由、认知锚点、隐喻、Scenes、Handdrawn PPT、Prompt 与 QA，只使用用户确认的 A 无头套背袋版或 B 有头套版；如果用户没有明确指定形象，生成前必须先询问选择 A 或 B；整组图固定同一变体并只读取 assets/standard-sheet/ 中的两张用户确认图。固定黑发、灰色西装短裤、白衬衣、领带、腰带、紫色墨镜、泡泡糖、紫白黑鞋子和黑猫四鱼徽章；A 袋内基本为空，B 袋内只有抽象奇思妙想符号；禁止旧角色、器官元素和任意变体漂移。"
 policy:
   allow_implicit_invocation: true
