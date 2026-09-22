@@ -8,6 +8,29 @@ description: >
 metadata:
   short-description: "花野稀泥版 Illustrations、Scenes 与 Handdrawn PPT 视觉 Hub"
 ---
+
+## FINAL USER-LOCKED IP — DO NOT DRIFT
+
+The following identity lock is the user's final decision and overrides every older description, cached prompt, legacy asset, automatic composition heuristic, or default character guess in this package. The two PNG files listed below are the final visual truth. Never redraw, restyle, beautify, reinterpret, regenerate, or overwrite either standard reference unless the user explicitly supplies and confirms a replacement image.
+
+Only two legal 花野稀泥 variants exist:
+
+- **A / `backpack` — 无头套背袋版**: short straight black Bob hair with blunt bangs fully visible; translucent purple-pink double-knot bag worn on the back only; the bag is basically empty; never put it on the head.
+- **B / `head-worn` — 有头套版**: the same short black Bob hair visible below a translucent purple-pink double-knot bag worn directly on the head; exactly two symmetric bows; the bag contains only abstract 奇思妙想 symbols such as light bulbs, stars, paper notes and question marks; never add a backpack.
+
+Both variants must keep exactly the same fixed identity: black hair, loose gray suit shorts, white shirt, purple tie, waist belt, purple oval sunglasses, pink bubble gum, black-cat + blue-star + exactly-four-orange-fish chest badge, and purple-white-black shoes. Use a solid pure-white background by default, with the same hand-drawn linework and restrained absurd metaphor. Do not introduce a third variant or silently change any of these details.
+
+Hard negatives: gray hair, earrings, long trousers, different shoes, missing sunglasses, missing gum, missing badge, extra fish, extra animals, organs, brain tissue, intestines, gore, anatomical or biological imagery, dark/dirty backgrounds, logos, watermarks, and copied legacy character designs.
+
+Authoritative user references (identity only; do not copy their composition, UI, or text):
+
+- `assets/standard-sheet/user-confirmed-a-no-headwear-backpack-reference.png`
+- `assets/standard-sheet/user-confirmed-b-head-worn-reference.png`
+
+For every new illustration or edit, use the selected PNG as an image identity reference and preserve its exact face, body proportions, cold-faced soft-cute expression, hair silhouette, clothing cut and clean clothing stroke treatment. Text descriptions are secondary and must never override visible details in these two PNGs.
+
+If the user does not name A or B, ask which variant to use before generating. Do not auto-select from the scene. If the user requests both, render them as separate variants and never combine them in one canvas.
+
 # 花野稀泥 Visual Hub — Illustrations · Scenes · Handdrawn PPT (Grok)
 
 ## Posicionamento
@@ -87,7 +110,7 @@ Leia **só o necessário** do modo ativo:
 - `references/composition-patterns.md`
 - `references/prompt-template.md`
 - `references/qa-checklist.md`
-- `assets/standard-sheet/` — única fonte de identidade: as duas imagens confirmadas pelo usuário e o recorte do distintivo.
+- `assets/standard-sheet/` — única fonte de identidade; não carregar imagens históricas de personagens.
 
 ### Modo `scenes` (condensado neste repo)
 
@@ -101,12 +124,12 @@ Leia **só o necessário** do modo ativo:
 
 ## IP identity lock — exactly two variants
 
-The output character is always 花野稀泥. Before generating, select exactly one user-confirmed variant and keep it fixed across the image set:
-- `backpack` / A 无头套背袋版: short straight black Bob hair with blunt bangs fully visible; the translucent purple-pink double-knot bag is worn on the back only and is basically empty.
-- `head-worn` / B 有头套版: the same short straight black Bob hair appears below a translucent purple-pink double-knot bag worn directly on the head; the bag contains only abstract idea symbols such as light bulbs, stars, paper notes and question marks.
-- Both variants share the exact gray loose suit shorts, white shirt, tie, waist belt, purple oval sunglasses, pink bubble gum, purple-white-black shoes, deadpan-cute expression, and black-cat + blue star + exactly four orange fish badge.
+The output character is always 花野稀泥. Before generating, select exactly one fixed idea-bag variant and keep it unchanged across the image set:
+- `backpack`: the translucent purple-pink double-knot idea bag is worn on the back; the short black Bob hair remains visible; the bag is basically empty.
+- `head-worn`: the same bag is worn directly on top of the head; it is not a backpack, shoulder bag, hanging bag, or hand-held bag; its contents are abstract 奇思妙想 symbols only.
+- Both variants share black hair, loose gray suit shorts, white shirt, purple tie, waist belt, purple oval sunglasses, pink bubble gum, purple-white-black shoes, deadpan-cute expression, and the black-cat + blue star + exactly four orange fish badge.
 - Never combine the two variants in one image or change the selected variant without the user explicitly requesting a switch.
-- If the user does not specify a variant, ask which one to use. Do not auto-select from movement, desk, tutorial, aspect ratio, or any other scene heuristic.
+- If the user does not specify a variant, ask before generating; do not choose from composition.
 
 ## Fluxos por modo
 
@@ -200,21 +223,3 @@ Híbrido: capa PPT + 3 illustrations de estrutura + 1 scene de manutenção.
 Antes: modo escolhido + shot list / blueprint curto.  
 Depois: contagem, uso, caminhos, o que é estável vs opcional.  
 Sem tratado longo de teoria — deixe a imagem falar.
-
-## 最终 IP 参考锁（v2.0，2026-09-22，强制）
-
-本仓库当前只保留用户刚确认的两张角色图及徽章局部图。两张用户确认图是花野稀泥身份的唯一权威参考；不得读取或使用旧角色图、原小黑人物图、旧标准表或历史衍生图。
-
-| 用户可见选择 | 内部变体 | 权威头部参考 | 固定含义 |
-| --- | --- | --- | --- |
-| A 无头套背袋版（也可称袋子版） | backpack | assets/standard-sheet/user-confirmed-a-no-headwear-backpack-reference.png | 黑色短直 Bob、齐刘海；不戴头套；透明紫粉袋背在身后，袋内基本为空 |
-| B 有头套版 | head-worn | assets/standard-sheet/user-confirmed-b-head-worn-reference.png | 同一黑色短直 Bob、齐刘海；透明紫粉袋直接戴在头上；袋内只能出现抽象奇思妙想符号，如灯泡、星星、纸条、问号 |
-
-生成前的确认门：
-
-- 用户已明确说“无头套背袋版/袋子版”或“有头套版”时，直接使用对应变体；如果明确要求两版，则分别生成并且每一组内部固定一版。
-- 用户只说“用我的 IP”“生成插画”或其他未明确变体的请求时，必须先问：**“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”** 在得到选择前不要生成。
-- 不得根据构图、场景、尺寸或模型习惯自行猜测变体；不得把两版混在同一角色或同一组图里。
-- 两版都固定：黑色短直 Bob 齐刘海、紫色椭圆墨镜、粉色泡泡糖、灰色宽松西装短裤套装、白色衬衣与领带、腰带、紫白黑相间的鞋子，以及黑猫 + 蓝色星形 + 恰好四条橙色鱼徽章。
-- 严禁脑组织、肠子、写实器官、身体内部剖面、血腥或其他生物器官隐喻。头套袋中的内容只能是抽象想法符号；背袋版保持基本为空。
-- 每次 imagegen/image_edit 调用前，先在内部记录 selected_variant 与对应参考路径；整组图不得中途切换。任何其他形象变化都必须得到用户明确的新确认，不能凭模型习惯改动。

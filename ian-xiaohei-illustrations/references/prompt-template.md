@@ -39,7 +39,9 @@ Do not change the character identity, do not mix A and B, do not create a third 
 - B head-worn：assets/standard-sheet/user-confirmed-b-head-worn-reference.png
 - 徽章局部：assets/standard-sheet/badge-black-cat-four-fish.png
 
-参考图只锁定人物身份，不复制其中的页面、文字、UI、构图或动作。兼容旧模板的别名如果存在，只是 A/B 确认图副本；旧角色图、原小黑人物图和历史衍生图不得加载。
+实际调用 imagegen/image_edit 时必须把所选 A/B PNG 作为图像输入，不得只把路径写进文字 Prompt。参考图中的脸型、人物比例、冷脸萌＋软萌气质、发型轮廓、服装版型与干净服装笔触必须保持一致；不得自行重绘、润色、美化或改造标准形象。
+
+参考图只锁定人物身份，不复制其中的页面、文字、UI、构图或动作。花野稀泥旧角色图和历史衍生图不得加载。原小黑示例图可以校准构图、认知隐喻和白底手绘风格，但不得校准角色外貌。
 
 如果用户未选择变体，先问：**“这次使用哪一套形象：A 无头套背袋版，还是 B 有头套版？”** 用户要求两版时分组渲染，每组内部固定一个变体。
 
